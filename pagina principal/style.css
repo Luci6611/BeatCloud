@@ -1,38 +1,103 @@
-#NavBar{
+#NavBar {
     background: hsl(0, 0%, 4%);
 }
 
-#SideBar{
-    color: hsl(0, 0%, 100%);
+#Buttons-Nav {
+    color: hsl(0, 0%, 51%);
 }
 
-#Buttons-Nav{
-    color: hsl(0, 0%, 100%);
+#Buttons-Nav:hover {
+    color: #f1f1f1;
+}
+
+#Button-Menu {
+    color: hsl(0, 0%, 51%);
+}
+
+#Button-Menu:hover {
+    color: #f1f1f1;
 }
 
 .input {
- line-height: 28px;
- border: 2px solid transparent;
- border-bottom-color: #777;
- padding: .2rem 0;
- outline: none;
- background-color: transparent;
- color: #ffffff;
- transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    line-height: 28px;
+    border: 2px solid transparent;
+    border-bottom-color: #777;
+    padding: 0.2rem 0;
+    outline: none;
+    background-color: transparent;
+    color: #f1f1f1;
+    transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.input:focus, input:hover {
- outline: none;
- padding: .2rem 1rem;
- border-radius: 1rem;
- border-color: hsl(0, 0%, 100%);
+.input:focus,
+input:hover {
+    outline: none;
+    padding: 0.2rem 1rem;
+    border-radius: 1rem;
+    border-color: #f1f1f1;
 }
 
 .input::placeholder {
- color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 51%);
 }
 
 .input:focus::placeholder {
- opacity: 0;
- transition: opacity .3s;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.Text-Border {
+ position: absolute;
+ background: #f1f1f1;
+ width: 0%;
+ height: 2px;
+ bottom: 0;
+ left: 0;
+ transition: 0.3s;
+}
+
+.Buttons-Nav:hover ~ .Text-Border {
+ width: 100%;
+}
+
+.sidenav {
+    height: 100%;
+    position: fixed;
+    width: 0;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: hsl(0, 0%, 4%);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    text-decoration: none;
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 30px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
 }
