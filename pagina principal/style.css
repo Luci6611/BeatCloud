@@ -1,0 +1,23 @@
+*{
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+     text-decoration: none;
+}
+html{
+     font-size: 10px;
+     scroll-behavior: auto;
+}
+ul , ol , li{
+     list-style: none;
+     text-decoration: none;
+}
+
+.carousel_size{
+    height: 30%;
+    max-width: 70%;
+}
+
+.carousel_size > img {
+   width: 10px;
+}
