@@ -1,3 +1,5 @@
+/* Normalizacion */
+
 *{
      box-sizing: border-box;
      padding: 0;
@@ -13,6 +15,8 @@ ul , ol , li{
      text-decoration: none;
 }
 
+/* Carrousel */
+
 .carousel_size{
     height: 30%;
     max-width: 70%;
@@ -20,4 +24,14 @@ ul , ol , li{
 
 .carousel_size > img {
    width: 10px;
+}
+
+/* Footer */
+
+footer{
+   font-size: 1.5em;
+}
+
+li {
+     padding: 5px;
 }
