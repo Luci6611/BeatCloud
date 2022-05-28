@@ -1,3 +1,5 @@
+/* NavBar */
+
 #NavBar {
     background: hsl(0, 0%, 4%);
 }
@@ -47,17 +49,17 @@ input:hover {
 }
 
 .Text-Border {
- position: absolute;
- background: #f1f1f1;
- width: 0%;
- height: 2px;
- bottom: 0;
- left: 0;
- transition: 0.3s;
+    position: absolute;
+    background: #f1f1f1;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
 }
 
 .Buttons-Nav:hover ~ .Text-Border {
- width: 100%;
+    width: 100%;
 }
 
 .sidenav {
@@ -101,3 +103,5 @@ input:hover {
         font-size: 18px;
     }
 }
+
+/*NavBar*/
