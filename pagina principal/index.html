@@ -1,117 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/css/uikit.min.css"
-    />   
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg" id="NavBar">
-        <div class="container-fluid">
-          <div class="uk-navbar-left">
-            <ul class="uk-navbar-nav">
-              <a class="uk-navbar-toggle" href="#" id="Button-Menu" onclick="openNav()">
-                <span uk-navbar-toggle-icon ></span>
-                <span class="uk-margin-small-left">Menu</span>
-              </a>
-              <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="#">ROCK</a>
-                <a href="#">POP</a>
-                <a href="#">RAP</a>
-                <a href="#">METAL</a>
-              </div>
-              <li>
-                <a href="" uk-icon="icon:soundcloud" id="Button-Menu"></a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Linkeo de boostrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/css/uikit.min.css" />
+  <!-- Linkeo de boostrap -->
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg" id="NavBar">
+      <div class="container-fluid">
+        <div class="uk-navbar-left">
+          <ul class="uk-navbar-nav">
+            <a class="uk-navbar-toggle" href="#" id="Button-Menu" onclick="openNav()">
+              <span uk-navbar-toggle-icon></span>
+              <span class="uk-margin-small-left">Menu</span>
+            </a>
+            <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <a href="#">ROCK</a>
+              <a href="#">POP</a>
+              <a href="#">RAP</a>
+              <a href="#">METAL</a>
+            </div>
+            <li>
+              <a href="" uk-icon="icon:soundcloud" id="Button-Menu"></a>
+            </li>
+          </ul>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span uk-navbar-toggle-icon id="Button-Menu"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="uk-navbar-right">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <div class="uk-button" href="#">
+                  <input placeholder="Search" type="search" class="input" required="" />
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="uk-button" href="#" id="Buttons-Nav">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="uk-button" href="#" id="Buttons-Nav">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="uk-button" href="#" id="btnr">Registrarse</a>
+              </li>
+              <li class="nav-item">
+                <a class="uk-button" href="#" uk-icon="icon:cart" id="Buttons-Nav"></a>
+              </li>
+              <li class="nav-item">
+                <a id="btn" class="uk-button " href="#" uk-icon="icon:user"></a>
               </li>
             </ul>
           </div>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"       
-          >
-            <span uk-navbar-toggle-icon id="Button-Menu"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="uk-navbar-right">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <div class="uk-button" href="#">
-                    <input
-                      placeholder="Search"
-                      type="search"
-                      class="input"
-                      required=""
-                    />
-                  </div>
-                </li>
-                <li class="nav-item" >
-                  <a class="uk-button" href="#" id="Buttons-Nav">Home</a>
-                </li>
-                <li class="nav-item" >
-                  <a class="uk-button" href="#" id="Buttons-Nav">About Us</a>
-                </li>
-                <li class="nav-item" >
-                  <a class="uk-button" href="#" id="btnr">Registrarse</a>
-                </li>
-                <li class="nav-item" >
-                  <a class="uk-button" href="#" uk-icon="icon:cart" id="Buttons-Nav"></a>
-                </li>
-                <li  class="nav-item" >
-                  <a id="btn"class="uk-button " href="#" uk-icon="icon:user"></a>
-                </li>
-              </ul>
-            </div>
+        </div>
+      </div>
+    </nav>
+    <!-- "FORMULARIO DE LOGIN" -->
+    <form class="form-login" id="login">
+      <h3>Inicio de sesion</h3>
+      <input class="form-login-controls" type="text" name="usuario" id="usuario" placeholder="usuario">
+      <input class="form-login-controls" type="password" name="contraseña" id="contraseña" placeholder="contraseña">
+      <p><a href="#">¿No tienes cuenta? Registrate</a></p>
+      <input class="form-login-btn" type="submit" value="iniciar sesion">
+    </form>
+    <!-- FORMULARIO DE REGISTRO -->
+    <form class="form-register" id="register">
+      <h3>Registrarse</h3>
+      <input class="form-register__controls" type="text" name="nombre" id="nombre" placeholder="nombre">
+      <input class="form-register__controls" type="text" name="apellido" id="apellido" placeholder="apellido">
+      <input class="form-register__controls" type="number" name="edad" id="edad" placeholder="edad">
+      <input class="form-register__controls" type="email" name="email" id="email" placeholder="email">
+      <input class="form-register__controls" type="text" name="usuario" id="usuario" placeholder="usuario">
+      <input class="form-register__controls" type="password" name="contraseña" id="contraseña" placeholder="contraseña">
+      <p>Acepto los <a href="#">terminos y condiciones</a></p>
+      <input type="submit" value="registrar" class="form-register__btn">
+    </form>
+  </header>
+  <main>
+    <section class="seccion__uno">
+    <!-- comienzo de carrousel -->
+    <div class="carrousel__conteiner">
+      <h3 class="carrousel__title">lo nuevo en beatCloud</h3>
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true"
+        style="width:100%;  height: 100%; padding: 20px;">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/img/guitar-acoustic-fire-flame-hd-wallpaper-preview.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/img/music-2560x1440-acoustic-wallpaper-preview.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/img/thumbbig-671259.jpg" class="d-block w-100" alt="...">
           </div>
         </div>
-      </nav>
-      <!-- "FORMULARIO DE LOGIN" -->
-      <form class="form-login" id="login">
-         <h3 >Inicio de sesion</h3>
-         <input class="form-login-controls" type="text" name="usuario" id="usuario" placeholder="usuario">
-         <input class="form-login-controls" type="password" name="contraseña" id="contraseña" placeholder="contraseña">
-         <p><a href="#">¿No tienes cuenta? Registrate</a></p>
-         <input class="form-login-btn" type="submit" value="iniciar sesion">
-      </form>
-      <!-- FORMULARIO DE REGISTRO -->
-      <form class="form-register" id="register">
-        <h3>Registrarse</h3>
-        <input class="form-register__controls" type="text" name="nombre" id="nombre" placeholder="nombre">
-        <input class="form-register__controls" type="text" name="apellido" id="apellido" placeholder="apellido">
-        <input class="form-register__controls" type="number" name="edad" id="edad" placeholder="edad">
-        <input class="form-register__controls" type="email" name="email" id="email" placeholder="email">
-        <input class="form-register__controls" type="text" name="usuario" id="usuario" placeholder="usuario">
-        <input class="form-register__controls" type="password" name="contraseña" id="contraseña" placeholder="contraseña">
-        <p>Acepto los <a href="#">terminos y condiciones</a></p>
-        <input type="submit" value="registrar" class="form-register__btn">
-    </form>
-    </header>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"
-    ></script>
-    <script src="script.js"></script>
-    <script src="uikit/dist/js/uikit-icons.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit-icons.min.js"></script>
-  </body>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <!-- fin de carrousel -->
+    <!-- inicio de seccion los mas vistos  -->
+    <div class="top-conteiner">
+      <div class="top">Top 5</div>
+
+      <div class="body">
+        <div class="title">
+        </div>
+
+        <ul>
+          <li class="music">The Blind Navigator (Extended Mix)<br>Kasper Koman</br>
+            <audio controls>
+              <source src="" type="audio/mpeg">
+
+            </audio>
+
+
+          <li class="music">Oranai (Nicholas Van Orton Summer Remix)<br>GMJ</br>
+            <audio controls>
+              <source src="" type="audio/mpeg">
+
+            </audio>
+
+          <li class="music">Drifted Paths (Original Mix)<br>Kros</br>
+            <audio controls>
+              <source src="" type="audio/mpeg">
+
+            </audio>
+
+
+          <li class="music">Shadows of the Soul (Original Mix)<br>Unusual Soul</br>
+            <audio controls>
+              <source src="" type="audio/mpeg">
+
+            </audio>
+
+          <li class="music">Small Alarms (Original Mix)<br>Guy J</br>
+            <audio controls>
+              <source src="" type="audio/mpeg">
+
+            </audio>
+
+
+         
+
+        
+
+
+            
+
+
+        
+        </ul>
+      </div>
+      <!-- fin de seccion los mas vistos -->
+      </section>
+  </main>
+  <!-- boostrap script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <!-- boostrap script -->
+  <script src="script.js"></script>
+  <!-- iconos linkeo -->
+  <script src="uikit/dist/js/uikit-icons.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit-icons.min.js"></script>
+</body>
+
 </html>

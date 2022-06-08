@@ -1,13 +1,20 @@
+*{
+    overflow-x: hidden;
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
 body{
     font-family: Calibri,sans-serif;
-    overflow-x: hidden;
+    background-color: #222222; 
 }
 header{
     width: 100%;
-    min-height: 500px;
+    height: 97px;
 }
 #NavBar {
     background: hsl(0, 0%, 4%);
+    height: 100%;
 }
 
 #Buttons-Nav {
@@ -121,6 +128,7 @@ input:hover {
     right: -800px;
     border-top: 5px solid rgb(58, 12, 12);
     box-shadow: 3px 3px 8px #000;
+    z-index: 1001;
 }
 .form-login h3{
  color: #ddd;
@@ -177,6 +185,7 @@ input:hover {
     color: #aaa;
     position: absolute;
     right: -800px;
+    z-index: 1000;
 }
 .form-register h3{
     color: #aaa;
@@ -223,6 +232,90 @@ input:hover {
     margin: auto;
     transition: all .2s ease-in-out;
 }
+main{
+    background-color: #222222; 
+    width: 100vw;
+    padding: 10px;
+}
+.seccion__uno{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+/* estilos carrousel */
+.carrousel__conteiner{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 55%;
+    height: 550px;
+    background-color:#383838; 
+    margin-top: 100px;
+    margin-right:20px;
+}
+.carrousel__title{
+    font-family: oswald;
+    font-size: 45px;
+    color: #fff;
+    overflow: hidden;
+}
+/* estilos carrousel */
+/* estilos de los mas vistos */
+
+.top-conteiner{
+    max-width:45%;
+}
+.top {
+    font-family: oswald;
+      font-size: 70px;
+      color: #fff;
+      text-align: center;
+    
+    }
+    .music {
+      list-style: none;
+      background: #383838;
+      padding: 10px;
+      margin-left: -25px;
+      font-family: oswald;
+      color: #ffffff;
+      width: 100%;
+      font-size: 20px;
+    }
+    .music:nth-child(odd) {
+      background: #383838;
+      color:#ffffff;
+    }
+    .sub {
+      font-size: 30px;
+      margin-top: -20px;
+      color: #ffffff;
+      letter-spacing: 15px;
+    }
+    .title {
+      color: #fff;
+      font-family: oswald;
+      font-size: 30px;
+      padding: 10px;
+
+    }
+    .body {
+      width: 100%;
+      padding-bottom: 20px;
+      background: #383838;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @font-face {
+      font-family: 'Oswald';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Oswald Regular'), local('Oswald-Regular'), url(http://themes.googleusercontent.com/static/fonts/oswald/v7/-g5pDUSRgvxvOl5u-a_WHw.woff) format('woff');
+    }
+/* estilos de los mas vistos */
 @media screen  and (max-width:600px) {
  .mcollapsed{
      top: 0;
@@ -240,3 +333,4 @@ input:hover {
         font-size: 18px;
     }
 }
+
