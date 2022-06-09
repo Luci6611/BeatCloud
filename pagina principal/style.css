@@ -1,42 +1,46 @@
-*{
-  
-    padding: 0%;
-    margin: 0%;
+* {
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    color: #fff;
     list-style: none;
+    user-select: none;
 }
-html{
+
+html {
     font-size: 10px;
 }
-body{
-    font-family: Calibri,sans-serif;
-    background-color: #222222; 
-    width: 100vw;
-    height: 100vh;
-  
+
+
+body {
+    font-family: Calibri, sans-serif;
+    background-color: #222222;
 }
 
 #NavBar {
     background: hsl(0, 0%, 4%);
-    height: 100%;
 }
 
 #Buttons-Nav {
     color: hsl(0, 0%, 51%);
 }
-#btnr{
+
+#btnr {
     color: hsl(0, 0%, 51%);
 }
-#btnr:hover{
+
+#btnr:hover {
     color: #fff;
 }
+
 #btn {
     color: hsl(0, 0%, 51%);
 }
-#btn:hover{
+
+#btn:hover {
     color: #fff;
 }
+
 #Buttons-Nav:hover {
     color: #f1f1f1;
 }
@@ -78,17 +82,17 @@ input:hover {
 }
 
 .Text-Border {
- position: absolute;
- background: #f1f1f1;
- width: 0%;
- height: 2px;
- bottom: 0;
- left: 0;
- transition: 0.3s;
+    position: absolute;
+    background: #f1f1f1;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
 }
 
-.Buttons-Nav:hover ~ .Text-Border {
- width: 100%;
+.Buttons-Nav:hover~.Text-Border {
+    width: 100%;
 }
 
 .sidenav {
@@ -123,263 +127,234 @@ input:hover {
     font-size: 30px;
     margin-left: 50px;
 }
+
 /* formulario login */
-.form-login{  
-    display: none;
-    width: 400px;
-    height: 300px;
-    padding: 25px;
-    background-color:rgb(28, 26, 26);
+.form-login {
+    width: 350px;
+    height: 280px;
+    padding: 20px;
+    background-color: rgb(28, 26, 26);
     position: absolute;
     right: -800px;
     border-top: 5px solid rgb(58, 12, 12);
     box-shadow: 3px 3px 8px #000;
     z-index: 1001;
 }
-.form-login h3{
- color: #ddd;
+
+.form-login h3 {
+    color: #ddd;
 }
-.form-login-controls{
+
+.form-login-controls {
     width: 100%;
-    padding: 5px;
+    padding: 4px;
     margin-bottom: 10px;
     border-top: 4px solid rgb(42, 41, 41);
 }
-.form-login-controls:hover{
-    outline: 3px  solid rgb(23, 20, 20);
-    border-radius:1px;
+
+.form-login-controls:hover {
+    outline: 3px solid rgb(23, 20, 20);
+    border-radius: 1px;
 }
-.form-login p{
-    margin:0;
+
+.form-login p {
+    margin: 0;
 }
-.form-login p a{
+
+.form-login p a {
     text-decoration: none;
     color: #fff;
     font-size: 1rem;
 }
-.form-login p a:hover{
+
+.form-login p a:hover {
     text-decoration: underline;
 }
-.form-login-btn{
+
+.form-login-btn {
     width: 100%;
-    margin:22px 0 0 0;
-    padding: 5px 4px;
+    margin: 22px 0 0 0;
+    padding: 2px 4px;
     background-color: rgb(63, 60, 60);
     color: #Fff;
     border: none;
-   
+
 }
-.form-login-btn:hover{
+
+.form-login-btn:hover {
     border-radius: 5px;
     transition: all .3s;
     background-color: rgb(77, 12, 12);
     color: #111;
     font-weight: bold;
 }
-.mcollapsed{
-    display: block;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right:0;
-    margin: auto;
-    
+
+.mcollapsed {
+    right: 300px;
     transition: all .2s ease-in-out;
 }
+
 /* formulario registro */
-.form-register{
-    display: none;
+.form-register {
     width: 400px;
     height: 380px;
-    background:linear-gradient(rgb(28, 26, 26)80%,rgb(0, 0, 0));
+    background: linear-gradient(rgb(28, 26, 26)80%, rgb(0, 0, 0));
     border-top: 5px solid rgb(30, 27, 70);
-    padding:10px 16px;
+    padding: 10px 16px;
     box-shadow: 3px 3px 5px #000;
     color: #aaa;
     position: absolute;
     right: -800px;
     z-index: 1000;
 }
-.form-register h3{
+
+.form-register h3 {
     color: #aaa;
 }
-.form-register__controls{
+
+.form-register__controls {
     width: 100%;
     margin-bottom: 5px;
-   color: #000;
+    color: #000;
 }
-.form-register__controls:hover{
+
+.form-register__controls:hover {
     border-radius: 5px;
 }
-.form-register__controls:focus{
-    outline:2px solid rgb(30, 7, 105);
+
+.form-register__controls:focus {
+    outline: 2px solid rgb(30, 7, 105);
 }
-.form-register p{
+
+.form-register p {
     margin: 8px 0;
 }
-.form-register p a{
+
+.form-register p a {
     text-decoration: none;
     color: #ddd;
 }
-.form-register p a:hover{
-    text-decoration: underline;  
+
+.form-register p a:hover {
+    text-decoration: underline;
 }
-.form-register__btn{
+
+.form-register__btn {
     width: 100%;
-    margin-bottom:5px;
-    background-color:rgb(43, 21, 132);
+    margin-bottom: 5px;
+    background-color: rgb(43, 21, 132);
     padding: 4px 40px;
     color: #fff;
 }
-.form-register__btn:hover{
+
+.form-register__btn:hover {
     border-radius: 2px;
     border: none;
-    background-color:rgb(46, 99, 177) ;
+    background-color: rgb(46, 99, 177);
     transition: all .2s;
 }
-.rcollapsed{
-    display: block;
+
+.rcollapsed {
     top: 100px;
-    right:0;
+    right: 0;
     bottom: 0;
-    left:0;
+    left: 0;
     margin: auto;
     transition: all .2s ease-in-out;
 }
-main{
-    background-color: #222222; 
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-}
-.grid-conteiner{
-    width: 100%;
-    height: 700px;
-    display: grid;
-    grid-template-columns:minmax(800px,1fr) 1fr ;
-    grid-template-rows:100%;
-    gap: 10px;
-    align-items: flex-end;
-    padding: 0px 15px;
-    overflow: hidden;
 
+main {
+    background-color: #222222;
+    width: 100%;
+    padding: 10px;
 }
 
 /* estilos carrousel */
-.carrousel__conteiner{
-    order: 1;
+.carrousel__conteiner {
     overflow: hidden;
-    display: flex;
-
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    background:linear-gradient(#383838,rgb(47, 46, 46)); 
-    border: 4px solid #4a1414;
-    border-radius: 5px;
+    height: 550px;
+    background-color: #383838;
 }
-.carrousel__title{
+
+
+.carrousel__title {
+    text-align: center;
     font-family: oswald;
-    font-size: 45px;
+    font-size: 3rem;
     color: #fff;
     overflow: hidden;
 }
-img {
-    max-width: 100%;
-    height: auto; 
-   
-}
+
 /* estilos carrousel */
 /* estilos de los mas vistos */
 
-.top-conteiner{
-    order: 2;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
 
-}
 .top {
     font-family: oswald;
-      font-size: 70px;
-      color: #fff;
-      text-align: center;
-    
-    }
-    .top_ul{
-        display: flex;
-        flex-direction: column;
-        padding:0  5px;
-    }
-    .music {
-      background: #383838;
-      margin-bottom: 10px;
-      font-family: oswald;
-      font-size: 80px;
-      color: #ffffff;
-      width: 100%;
-      height: 100%;
-      font-size: 25px;
-    }
-    .audio{
-        display: block;
-        width: 100%;
-        border:3px solid rgb(112, 22, 20);
-        border-radius: 27px;
-    }
-   
-    .body {
-       
-    border: 4px solid #4a1414;
-      border-radius: 5px;
-      width: 100%;
-      height: 100%;
-      background:linear-gradient(#383838,rgb(47, 46, 46)); 
-    
-    }
-    @font-face {
-      font-family: 'Oswald';
-      font-style: normal;
-      font-weight: 400;
-      src: local('Oswald Regular'), local('Oswald-Regular'), url(http://themes.googleusercontent.com/static/fonts/oswald/v7/-g5pDUSRgvxvOl5u-a_WHw.woff) format('woff');
-    }
+    font-size: 70px;
+    color: #fff;
+    text-align: center;
+}
+
+.music {
+    background: #383838;
+    padding: 15px;
+    font-family: oswald;
+    color: #ffffff;
+    font-size: 2rem;
+}
+
+.music:nth-child(odd) {
+    background: #383838;
+    color: #ffffff;
+}
+
+.sub {
+    font-size: 30px;
+    margin-top: -20px;
+    color: #ffffff;
+    letter-spacing: 15px;
+}
+
+.title {
+    color: #fff;
+    font-family: oswald;
+    font-size: 30px;
+    padding: 10px;
+
+}
+
+.body {
+    width: 100%;
+    padding-bottom: 20px;
+    background: #383838;
+
+}
+
+@font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Oswald Regular'), local('Oswald-Regular'), url(http://themes.googleusercontent.com/static/fonts/oswald/v7/-g5pDUSRgvxvOl5u-a_WHw.woff) format('woff');
+}
+
 /* estilos de los mas vistos */
-@media screen and (max-width:1128px) {
-    .grid-conteiner{
-        grid-template-columns: 1fr;
-        
-    }
-    .carrousel__conteiner{
-        margin: 0 auto;
-       width: 90%;
-       height: 90%;
-    }
-    .carrousel__title{
-        font-family: oswald;
-        font-size: 6rem;
-        color: #fff;
-        overflow: hidden;
-    }
-    .top-conteiner{
-        display: none;
+@media screen and (max-width:600px) {
+    .mcollapsed {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
     }
 }
-@media screen  and (max-width:600px) {
- .mcollapsed{
-     top: 0;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     margin: auto;
- }   
-}
+
 @media screen and (max-height: 450px) {
     .sidenav {
         padding-top: 15px;
     }
+
     .sidenav a {
         font-size: 18px;
     }
 }
-
