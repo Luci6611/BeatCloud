@@ -7,6 +7,10 @@
     user-select: none;
 }
 
+html {
+    font-size: 10px;
+}
+
 
 body {
     font-family: Calibri, sans-serif;
@@ -272,14 +276,11 @@ main {
     background-color: #383838;
 }
 
-.carrousel__conteiner img {
-    height: 100%;
-}
 
 .carrousel__title {
     text-align: center;
     font-family: oswald;
-    font-size: 40px;
+    font-size: 3rem;
     color: #fff;
     overflow: hidden;
 }
@@ -297,10 +298,10 @@ main {
 
 .music {
     background: #383838;
-    padding: 10px;
+    padding: 15px;
     font-family: oswald;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 2rem;
 }
 
 .music:nth-child(odd) {
