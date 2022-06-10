@@ -7,10 +7,6 @@
     user-select: none;
 }
 
-a ,ul ,li{
-    text-decoration: none;
-}
-
 html {
     font-size: 10px;
 }
@@ -266,6 +262,13 @@ input:hover {
     margin: auto;
     transition: all .2s ease-in-out;
 }
+
+.uk-navbar-left{
+   position: relative;
+   z-index:2;
+}
+
+/* main */
 
 main {
     background-color: #222222;
