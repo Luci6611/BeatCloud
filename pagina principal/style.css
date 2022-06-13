@@ -376,12 +376,90 @@ img {
     }
 
 /* estilos de los mas vistos */
+
+
 /* estilos del crud */
+
+/* controles del crud */
+.crud__controls{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+   background-color: rgb(61, 58, 58);
+}
+
+
+.crud__controls-btn{
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #5c1a1a;
+    color: #ddd;
+    font-family: oswald;
+    border: none;
+    box-shadow: 2px 2px 2px 2px #000;
+}
+.crud__controls-btn:hover{
+    background-color: #5c1a1a46;
+    color: #aaa;
+    transition: all .2s;
+}
+/* controles del crud */
+.crud-body{
+    background-color: #222;
+
+}
+.catalogo-title{
+    color: #ddd;
+  text-align: center;
+    font-size: 4rem;
+    font-family: oswald; 
+}
 .crud-subtitle{
     color: #ffff;
     font-family: oswald;
     font-size: 3rem;
 }
+/* formulario de subida de archivos */
+.form-subir-body{
+    display: none;
+    margin: 0 auto;
+    font-family: oswald;
+    background-color: #5c1a1a;
+    width: 300px;
+    padding: 10px;
+    border: 4px solid #111;
+}
+.form-subir-body h3{
+    font-size: 2rem;
+    font-family: oswald;
+    color: #ddd;
+}
+.form-subir-controls{
+    width: 100%;
+    padding: 3px;
+    margin-bottom: 8px;
+}
+.form-subir-controls:hover{
+    border-radius:0px;
+}
+.form-subir-btn{
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #333;
+    color: #fff;
+}
+.form-subir-btn:hover{
+    border-radius: 0;
+    background-color: #444;
+    border: 2px solid #777;
+}
+.form-subir-collapsed{
+    display:block;
+}
+
+/* formulario de subida de archivos */
 /* estilos de las  cards */
 .crud-card-body{
     overflow: hidden;

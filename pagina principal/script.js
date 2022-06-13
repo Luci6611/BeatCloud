@@ -19,3 +19,11 @@ function openNav() {
   botonr.addEventListener("click",() => {
     formr.classList.toggle("rcollapsed");
 });
+
+// MODALES DE CRUD CONTROLS
+// ABRIR MODAL DE SUBIR
+const btnms = document.getElementById("subir");
+const modalSubir = document.getElementById("form-subir");
+btnms.addEventListener("click",()=>{
+ modalSubir.classList.toggle("form-subir-collapsed");
+})
