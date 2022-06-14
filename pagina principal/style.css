@@ -380,37 +380,14 @@ img {
 
 /* estilos del crud */
 
-/* controles del crud */
-.crud__controls{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-   background-color: rgb(61, 58, 58);
-}
 
-
-.crud__controls-btn{
-    width: 100px;
-    padding: 10px;
-    margin: 10px;
-    background-color: #5c1a1a;
-    color: #ddd;
-    font-family: oswald;
-    border: none;
-    box-shadow: 2px 2px 2px 2px #000;
-}
-.crud__controls-btn:hover{
-    background-color: #5c1a1a46;
-    color: #aaa;
-    transition: all .2s;
-}
-/* controles del crud */
 .crud-body{
     background-color: #222;
    
 
 }
 .catalogo-title{
+    overflow: hidden;
     color: #ddd;
   text-align: center;
     font-size: 4rem;
@@ -424,8 +401,15 @@ img {
 }
 /* formulario de subida de archivos */
 .form-subir-body{
+    position: absolute;
+    height:350px;
+    top: 0%;
+    left: 0%;
+    bottom: 0%;
+    right: 0%;
+     margin: auto;
     display: none;
-    margin: 0 auto;
+   z-index: 4000;
     font-family: oswald;
     background-color: #5c1a1a;
     width: 300px;
@@ -617,15 +601,56 @@ img {
 /* estilos de las  cards */
 
 
-/* ANIMACION DE SUBIR AL CARRITO */
+/* BOTON FLOTANTE DE SUBIR  */
 
-    
+
+
+button {
+	border: none;
+	outline: none;
+}
+
+.wrapper {
+    position: fixed;
+    bottom: 40px;
+    right: 70px;
+  margin: auto;
+  padding: 50px 0;
+	width: 60px;
+	height: 60px;
+    overflow: hidden;
+	z-index: 2147483647;
+}
+
+.circle {
+	border-radius: 50%;
+	height: 60px;
+	width: 60px;
+	background-color: #b51818;
+	opacity: 0.5;
+	display: flex;
+	transition: 0.2s;
+  
+}
+
+	img {
+		margin: auto;
+		width: 30px;
+		height: 30px;
+		transition: 0.5s;
+	}
+
+	.circle:hover, .circle:focus {
+		cursor: pointer;
+	}
+   
+
   
 
 
 
 
-/* ANIMACION DE SUBIR AL CARRITO */
+/* BOTON FLOTANTE DE SUBIR */
 
 /* estilos del crud */
 @media screen and (max-width:600px) {

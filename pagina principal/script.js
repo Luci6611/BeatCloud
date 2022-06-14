@@ -21,13 +21,6 @@ function openNav() {
 });
 
 // MODALES DE CRUD CONTROLS
-// ABRIR MODAL DE SUBIR
-const btnms = document.getElementById("subir");
-const modalSubir = document.getElementById("form-subir");
-btnms.addEventListener("click",()=>{
- modalSubir.classList.toggle("form-subir-collapsed");
-})
-
 
 // ANIMACION DE CARRITO
 
@@ -41,3 +34,9 @@ function cartClick() {
 	let button = this;
 	button.classList.add('clicked');
 }
+// animacion de boton flotante ABRIR MODAL DE SUBIR
+const botonSubir = document.getElementById("btnsubir");
+const modalSubir = document.getElementById("form-subir");
+botonSubir.addEventListener("click",()=>{
+  modalSubir.classList.toggle("form-subir-collapsed")
+})
