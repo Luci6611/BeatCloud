@@ -596,8 +596,15 @@ img {
 }
 /* BOTON Y ANIMACION DE CARRITO */
 
-
-
+/* boton de submenu */
+.icono-card-menu{
+    position: absolute;
+    left: 0;
+    top:0 ;
+    color: #Fff;
+    background-color: #fff;
+}
+/* boton de submenu */
 /* estilos de las  cards */
 
 
