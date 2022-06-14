@@ -500,21 +500,132 @@ img {
     color: #ddd;
     font-family: oswald;
 }
-.crud-card-btn{
-    width: 60%;
-    padding: 4px;
-    border-radius: 5px;
-    background-color: #6e1e1e;
-    border: 1px solid #5d5151;
-    color:#222;
+
+/* BOTON Y ANIMACION DE CARRITO */
+.crud-card-btn {
+	position: relative;
+	padding: 4px;
+	width: 62%;
+	height: 50px;
+	border: 2PX solid #503636;
+	border-radius: 5px;
+	background-color: #6e1e1e;
+	outline: none;
+	cursor: pointer;
+	color: #222;
+	transition: .3s ease-in-out;
+	overflow: hidden;
 }
-.crud-card-btn:hover{
+.crud-card-btn:hover {
     background-color: #892727a3;
     color:rgb(141, 131, 131);
     transition: .2s background ;
 }
+.crud-card-btn:active {
+	transform: scale(.9);
+}
+
+.crud-card-btn .fa-shopping-cart {
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	left: -10%;
+	font-size: 2em;
+	transform: translate(-50%,-50%);
+}
+.crud-card-btn .fa-box {
+	position: absolute;
+	z-index: 3;
+	top: -20%;
+	left: 52%;
+	font-size: 1.2em;
+	transform: translate(-50%,-50%);
+}
+.crud-card-btn span {
+	position: absolute;
+	z-index: 3;
+	left: 50%;
+	top: 50%;
+	font-size: 1.2em;
+	color: #fff;
+	transform: translate(-50%,-50%);
+}
+.crud-card-btn span.add-to-cart {
+	opacity: 1;
+}
+.crud-card-btn span.added {
+	opacity: 0;
+}
+
+.crud-card-btn.clicked .fa-shopping-cart {
+	animation: cart 1.5s ease-in-out forwards;
+}
+.crud-card-btn.clicked .fa-box {
+	animation: box 1.5s ease-in-out forwards;
+}
+.crud-card-btn.clicked span.add-to-cart {
+	animation: txt1 1.5s ease-in-out forwards;
+}
+.crud-card-btn.clicked span.added {
+	animation: txt2 1.5s ease-in-out forwards;
+}
+@keyframes cart {
+	0% {
+		left: -10%;
+	}
+	40%, 60% {
+		left: 50%;
+	}
+	100% {
+		left: 110%;
+	}
+}
+@keyframes box {
+	0%, 40% {
+		top: -20%;
+	}
+	60% {
+		top: 40%;
+		left: 52%;
+	}
+	100% {
+		top: 40%;
+		left: 112%;
+	}
+}
+@keyframes txt1 {
+	0% {
+		opacity: 1;
+	}
+	20%, 100% {
+		opacity: 0;
+	}
+}
+@keyframes txt2 {
+	0%, 80% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+/* BOTON Y ANIMACION DE CARRITO */
+
+
 
 /* estilos de las  cards */
+
+
+/* ANIMACION DE SUBIR AL CARRITO */
+
+    
+  
+
+
+
+
+/* ANIMACION DE SUBIR AL CARRITO */
+
 /* estilos del crud */
 @media screen and (max-width:600px) {
     .mcollapsed {

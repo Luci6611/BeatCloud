@@ -27,3 +27,17 @@ const modalSubir = document.getElementById("form-subir");
 btnms.addEventListener("click",()=>{
  modalSubir.classList.toggle("form-subir-collapsed");
 })
+
+
+// ANIMACION DE CARRITO
+
+const cartButtons = document.querySelectorAll('.crud-card-btn');
+
+cartButtons.forEach(button => {
+	button.addEventListener('click', cartClick);
+});
+
+function cartClick() {
+	let button = this;
+	button.classList.add('clicked');
+}
