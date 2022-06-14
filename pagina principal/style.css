@@ -214,7 +214,7 @@ input:hover {
     width: 400px;
     height: 380px;
     background: linear-gradient(rgb(28, 26, 26)80%, rgb(0, 0, 0));
-    border-top: 5px solid rgb(30, 27, 70);
+    border-top: 5px solid rgb(103, 14, 7);
     padding: 10px 16px;
     box-shadow: 3px 3px 5px #000;
     color: #aaa;
@@ -238,7 +238,7 @@ input:hover {
 }
 
 .form-register__controls:focus {
-    outline: 2px solid rgb(30, 7, 105);
+    outline: 2px solid rgb(105, 7, 7);
 }
 
 .form-register p {
@@ -257,7 +257,7 @@ input:hover {
 .form-register__btn {
     width: 100%;
     margin-bottom: 5px;
-    background-color: rgb(43, 21, 132);
+    background-color: rgb(135, 5, 5);
     padding: 4px 40px;
     color: #fff;
 }
@@ -265,7 +265,7 @@ input:hover {
 .form-register__btn:hover {
     border-radius: 2px;
     border: none;
-    background-color: rgb(46, 99, 177);
+    background-color: rgb(177, 79, 46);
     transition: all .2s;
 }
 
@@ -419,6 +419,7 @@ img {
     color: #ffff;
     font-family: oswald;
     font-size: 3rem;
+    overflow: hidden;
 }
 /* formulario de subida de archivos */
 .form-subir-body{
