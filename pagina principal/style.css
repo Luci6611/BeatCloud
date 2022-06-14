@@ -401,6 +401,7 @@ img {
 }
 /* formulario de subida de archivos */
 .form-subir-body{
+    overflow: hidden;
     position: absolute;
     height:350px;
     top: 0%;
@@ -443,6 +444,18 @@ img {
 }
 .form-subir-collapsed{
     display:block;
+}
+.form-reset-btn{
+    width: 100%;
+    margin-top: 5px;
+    padding: 5px;
+    background-color: #333;
+    color: #fff;
+}
+.form-reset-btn:hover{
+    border-radius: 0;
+    background-color: #444;
+    border: 2px solid #777;
 }
 
 /* formulario de subida de archivos */

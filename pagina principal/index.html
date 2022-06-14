@@ -84,12 +84,12 @@
         <!-- FORMULARIO DE REGISTRO -->
         <form class="form-register" id="register">
             <h3>Registrarse</h3>
-            <input class="form-register__controls" type="text" name="nombre" id="nombre" placeholder="nombre">
-            <input class="form-register__controls" type="text" name="apellido" id="apellido" placeholder="apellido">
-            <input class="form-register__controls" type="number" name="edad" id="edad" placeholder="edad">
-            <input class="form-register__controls" type="email" name="email" id="email" placeholder="email">
-            <input class="form-register__controls" type="text" name="usuario" id="usuario" placeholder="usuario">
-            <input class="form-register__controls" type="password" name="contraseña" id="contraseña"
+            <input class="form-register__controls" type="text" name="nombre" id="nombrer" placeholder="nombre">
+            <input class="form-register__controls" type="text" name="apellido" id="apellidor" placeholder="apellido">
+            <input class="form-register__controls" type="number" name="edad" id="edadr" placeholder="edad">
+            <input class="form-register__controls" type="email" name="email" id="emailr" placeholder="email">
+            <input class="form-register__controls" type="text" name="usuario" id="usuarior" placeholder="usuario">
+            <input class="form-register__controls" type="password" name="contraseña" id="contraseñar"
                 placeholder="contraseña">
             <p>Acepto los <a href="#">terminos y condiciones</a></p>
             <input type="submit" value="registrar" class="form-register__btn">
@@ -182,17 +182,18 @@
           <h3 class="catalogo-title">catalogo</h3>
  
           <!-- FORMULARIO DE SUBIDA DE ARCHIVOS -->
-          <form class="form-subir-body" id="form-subir" action="">
+          <form class="form-subir-body"  id="form-subir" action="">
             <h3>Sube tu cancion</h3>
             <input class="form-subir-controls" type="text" name="cancionportada" id="cancionportada" placeholder="ingresa url de portada">
             <input class="form-subir-controls" type="text" name="cancionnombre" id="cancionnombre" placeholder="ingresa el nombre">
             <input class="form-subir-controls" type="text" name="cancionautor" id="cancionautor" placeholder="ingresa el autor">
             <input class="form-subir-controls" type="text" name="canciongenero" id="canciongenero" placeholder="ingresa el genero">
-            <input class="form-subir-btn" type="button" value="subir">
+            <input class="form-subir-btn" type="submit" onclick="crearNuevaCancion()" value="subir">
+            <input type="reset" class="form-reset-btn" onclick="clearForm()" value="resetear">
         
           </form>
               <!-- FORMULARIO DE SUBIDA DE ARCHIVOS -->
-        <div class="crud-body container-fluid  ">       
+        <div class="crud-body container-fluid" id="contenedorcanciones">       
             
            <!-- SECCION ROCK  -->
 

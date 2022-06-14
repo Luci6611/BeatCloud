@@ -40,3 +40,41 @@ const modalSubir = document.getElementById("form-subir");
 botonSubir.addEventListener("click",()=>{
   modalSubir.classList.toggle("form-subir-collapsed")
 })
+
+// CRUD
+const mockApiURL = "https://62a8f315ec36bf40bdb0cdde.mockapi.io/";
+// VARIABLES
+let newNombreCancion = document.getElementById("cancionnombre");
+let newAutor = document.getElementById("cancionautor");
+let newCancionURL = document.getElementById("cancionportada");
+let newFormSubir = document.getElementById("form-subir");
+let contentedorCanciones = document.getElementById("contenedorcanciones");
+newFormSubir.addEventListener("click", (e) => {
+  e.preventDefault();
+});
+// RESETEO DE FORMULARIO
+function clearForm() {
+  newFormSubir.reset();
+}
+// CREAR CANCION NUEVA
+function crearNuevaCancion() {
+  let nuevaCancion = {
+    nombre: newNombreCancion.value,
+    autor: newAutor,
+    portada: newCancionURL.value,
+  };
+  return nuevaCancion;
+}
+async function postUser(user) {
+  const response = await fetch(mockApiURL, {
+    method: "POST",
+    body: JSON.stringify(user),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+
+  return response;
+}
