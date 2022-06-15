@@ -1,15 +1,19 @@
-<<<<<<< HEAD
-
-
-=======
-body{
-    font-family: Calibri,sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-header{
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: Calibri, sans-serif;
+}
+
+header {
     width: 100%;
     min-height: 500px;
 }
->>>>>>> 61c781eb1bbe2685ac8967e6806c74135beadd64
 
 /* NavBar */
 
@@ -21,7 +25,7 @@ header{
     color: hsl(0, 0%, 51%);
 }
 #button-login {
-    color:hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 100%);
 }
 
 #Buttons-Nav:hover {
@@ -36,7 +40,7 @@ header{
     color: #f1f1f1;
 }
 
-.input {
+.input1 {
     line-height: 28px;
     border: 2px solid transparent;
     border-bottom-color: #777;
@@ -47,19 +51,18 @@ header{
     transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.input:focus,
-input:hover {
+.input1:hover {
     outline: none;
     padding: 0.2rem 1rem;
     border-radius: 1rem;
     border-color: #f1f1f1;
 }
 
-.input::placeholder {
+.input1::placeholder {
     color: hsl(0, 0%, 51%);
 }
 
-.input:focus::placeholder {
+.input1:focus::placeholder {
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -110,61 +113,6 @@ input:hover {
     font-size: 30px;
     margin-left: 50px;
 }
-/* formulario */
-.form-login{  
-    width: 350px;
-    height: 280px;
-    padding: 20px;
-    background-color:rgb(28, 26, 26);
-    position: absolute;
-    right: -800px;
-    border-top: 5px solid rgb(58, 12, 12);
-    box-shadow: 3px 3px 8px #000;
-}
-.form-login h3{
- color: #ddd;
-}
-.form-login-controls{
-    width: 100%;
-    padding: 4px;
-    margin-bottom: 10px;
-    border-top: 4px solid rgb(42, 41, 41);
-}
-.form-login-controls:hover{
-    outline: 3px  solid rgb(23, 20, 20);
-    border-radius:1px;
-}
-.form-login p{
-    margin:0;
-}
-.form-login p a{
-    text-decoration: none;
-    color: #fff;
-    font-size: 1rem;
-}
-.form-login p a:hover{
-    text-decoration: underline;
-}
-.form-login-btn{
-    width: 100%;
-    margin:22px 0 0 0;
-    padding: 2px 4px;
-    background-color: rgb(63, 60, 60);
-    color: #Fff;
-    border: none;
-   
-}
-.form-login-btn:hover{
-    border-radius: 5px;
-    transition: all .3s;
-    background-color: rgb(77, 12, 12);
-    color: #111;
-    font-weight: bold;
-}
-.mcollapsed{
-    right:300px;
-    transition: all .2s ease-in-out;
-}
 
 @media screen and (max-height: 450px) {
     .sidenav {
@@ -175,4 +123,319 @@ input:hover {
     }
 }
 
-/*NavBar*/
+svg line {
+    stroke-width: 2px;
+    stroke: red;
+}
+svg #svg_2 {
+    stroke-dasharray: 1680;
+    stroke-dashoffset: 1680;
+}
+svg #svg_4 {
+    stroke-dasharray: 1680;
+}
+svg #svg_3 {
+    stroke-dasharray: 1680;
+}
+svg #svg_5 {
+    stroke-dasharray: 1680;
+}
+@keyframes anim-dash {
+    90% {
+        stroke: red;
+    }
+    100% {
+        stroke: #131313;
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal1 {
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal1-inner {
+    top: 3px;
+    left: 3px;
+    background: #131313;
+    opacity: 0;
+}
+.modal1-close {
+    position: relative;
+    float: right;
+    z-index: +2;
+    color: #424242;
+    margin: 5px 5px 0 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    line-height: 20px;
+    height: 20px;
+    width: 20px;
+}
+
+.overlay:target .modal1,
+.overlay:target {
+    animation: display 0.4s forwards;
+    z-index: auto;
+}
+.overlay:target .modal1 svg line {
+    animation: anim-dash 0.4s forwards;
+    animation-delay: 0.4s;
+}
+.overlay:target .modal1 .modal1-inner {
+    animation: display 0.6s forwards;
+    animation-delay: 0.5s;
+}
+@keyframes display {
+    to {
+        opacity: 1;
+    }
+}
+
+a.modal1-open {
+    padding: 20px;
+    color: #424242;
+    font-weight: bold;
+    margin: 0 auto;
+    transform: translateY(100%);
+    width: 200px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.container2 {
+    position: relative;
+    width: 306px;
+    height: 366px;
+    background-color: #131313;
+    padding: 65px 40px 20px 40px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.505), -10px -10px 20px rgba(0, 0, 0, 0.361);
+}
+
+.container1 {
+    position: relative;
+    width: 306px;
+    height: 491px;
+    background-color: #131313;
+    padding: 45px 40px 15px 40px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.505), -10px -10px 20px rgba(0, 0, 0, 0.361);
+}
+
+/*.user{
+    width: 90px;
+    height: 90px;
+    background-color: red;
+
+}*/
+
+.form1 h1 {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+}
+
+.inputlog {
+    margin: 20px 0;
+    position: relative;
+    
+}
+
+.inputlog input {
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 0.4px solid rgba(255, 0, 0, 0.463);
+    font-size: 17px;
+    padding-top: 20px;
+    color: #f1f1f1;
+}
+
+.buttonlog {
+    position: relative;
+    padding: 0.5em 0.9em;
+    outline: none;
+    border: 1px solid #303030;
+    background: #212121;
+    color: red;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 15px;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.buttonlog:hover {
+    box-shadow: 0 0 5px red, 0 0 12.5px red, 0 0 25px red;
+    transition-delay: 0.6s;
+}
+
+.buttonlog span {
+    position: absolute;
+}
+
+.buttonlog span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, red);
+}
+
+.buttonlog:hover span:nth-child(1) {
+    left: 100%;
+    transition: 0.7s;
+}
+
+.buttonlog span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, red);
+}
+
+.buttonlog:hover span:nth-child(3) {
+    right: 100%;
+    transition: 0.7s;
+    transition-delay: 0.35s;
+}
+
+.buttonlog span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, red);
+}
+
+.buttonlog:hover span:nth-child(2) {
+    top: 100%;
+    transition: 0.7s;
+    transition-delay: 0.17s;
+}
+
+.buttonlog span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, red);
+}
+
+.buttonlog:hover span:nth-child(4) {
+    bottom: 100%;
+    transition: 0.7s;
+    transition-delay: 0.52s;
+}
+
+.buttonlog:active {
+    background: red;
+    background: linear-gradient(to top right, red red);
+    color: #bfbfbf;
+    box-shadow: 0 0 8px red, 0 0 8px red, 0 0 8px red;
+    transition: 0.1s;
+}
+
+.buttonlog:active span:nth-child(1) span:nth-child(2) span:nth-child(2) span:nth-child(2) {
+    transition: none;
+    transition-delay: none;
+}
+
+.inputlog label {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    pointer-events: none;
+    transition: 0.6s;
+    font-size: 14px;
+}
+
+.form1 input:focus + label,
+input:valid ~ label {
+    bottom: 24px;
+    left: 2px;
+    color: red;
+    font-size: 13px;
+}
+
+.form1 input[type="submit"] {
+    padding: 4px 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 3px 20px;
+    font-size: 15px;
+    background-color: red;
+}
+
+.box {
+    position: relative;
+}
+
+.forgot {
+    position: absolute;
+    font-size: 10px;
+    padding: 5px 0;
+    right: 0;
+}
+
+.signup {
+    font-size: 12px;
+    padding: 2px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    color: red;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.line {
+    background-color: white;
+    width: 100%;
+    height: 0.2px;
+    opacity: 0.2;
+    margin-top: 30px;
+}
+
+.div1 {
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+.modalregistroh4{
+    margin-top: 5px;
+}

@@ -1,114 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/css/uikit.min.css"
-    />   
-  </head>
-  <body>
-    <header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/css/uikit.min.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg" id="NavBar">
+                <div class="container-fluid">
+                    <div class="uk-navbar-left">
+                        <ul class="uk-navbar-nav">
+                            <a class="uk-navbar-toggle" href="#" id="Button-Menu" onclick="openNav()">
+                                <span uk-navbar-toggle-icon></span>
+                                <span class="uk-margin-small-left">Menu</span>
+                            </a>
+                            <div id="mySidenav" class="sidenav">
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                                <a href="#">ROCK</a>
+                                <a href="#">POP</a>
+                                <a href="#">RAP</a>
+                                <a href="#">METAL</a>
+                            </div>
+                            <li>
+                                <img
+                                    src="https://i.postimg.cc/J4QPD26c/Mi-proyecto.png"
+                                    alt=""
+                                    style="width: 136.359px; height: 90px"
+                                />
+                            </li>
+                        </ul>
+                    </div>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span uk-navbar-toggle-icon id="Button-Menu"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="uk-navbar-right">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <div class="uk-button botones-font" href="#">
+                                        <input placeholder="Search" type="search" class="input1" required="" />
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="uk-button" href="#" id="Buttons-Nav">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="uk-button" href="#" id="Buttons-Nav">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="uk-button" href="#show1" id="Buttons-Nav">Registrarse</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="uk-button" href="#" uk-icon="icon:cart" id="Buttons-Nav"></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="Buttons-Nav" class="uk-button" href="#show" uk-icon="icon:user"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
 
-      <!-- NavBar -->
+            <div class="overlay" id="show">
+                <div class="modal1" style="width: 310px; height: 370px">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 310 370"
+                        preserveAspectRatio="true"
+                        style="width: 310px; position: absolute; height: 370px"
+                    >
+                        <line
+                            id="svg_3"
+                            fill="none"
+                            stroke="#000000"
+                            stroke-width="2"
+                            x1="2.0"
+                            y1="2.0"
+                            x2="308"
+                            y2="2.0"
+                            style="stroke-dashoffset: -310"
+                        />
 
-      <nav class="navbar navbar-expand-lg" id="NavBar">
-        <div class="container-fluid">
-          <div class="uk-navbar-left">
-            <ul class="uk-navbar-nav">
-              <a class="uk-navbar-toggle" href="#" id="Button-Menu" onclick="openNav()">
-                <span uk-navbar-toggle-icon ></span>
-                <span class="uk-margin-small-left">Menu</span>
-              </a>
-              <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="#">ROCK</a>
-                <a href="#">POP</a>
-                <a href="#">RAP</a>
-                <a href="#">METAL</a>
-              </div>
-              <li>
-                <a href="" uk-icon="icon:soundcloud" id="Button-Menu"></a>
-              </li>
-            </ul>
-          </div>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"       
-          >
-            <span uk-navbar-toggle-icon id="Button-Menu"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="uk-navbar-right">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <div class="uk-button" href="#">
-                    <input
-                      placeholder="Search"
-                      type="search"
-                      class="input"
-                      required=""
-                    />
-                  </div>
-                </li>
-                <li class="nav-item" >
-                  <a class="uk-button" href="#" id="Buttons-Nav">Home</a>
-                </li>
-                <li class="nav-item" >
-                  <a class="uk-button" href="#" id="Buttons-Nav">About Us</a>
-                </li>
-                <li class="nav-item" >
-                  <a class="uk-button" href="#" id="Buttons-Nav">Registrarse</a>
-                </li>
-                <li class="nav-item" >
-                  <a class="uk-button" href="#" uk-icon="icon:cart" id="Buttons-Nav"></a>
-                </li>
-                <li  class="nav-item" >
-                  <a id="btn"class="uk-button " href="#" uk-icon="icon:user"></a>
-                </li>
-              </ul>
+                        <line
+                            id="svg_4"
+                            fill="none"
+                            stroke="#000000"
+                            stroke-width="2"
+                            x1="308"
+                            y1="368"
+                            x2="308"
+                            y2="2.0"
+                            style="stroke-dashoffset: -370"
+                        />
+
+                        <line
+                            id="svg_2"
+                            fill="none"
+                            stroke="#000000"
+                            stroke-width="2"
+                            x1="2.0"
+                            y1="368"
+                            x2="308"
+                            y2="368"
+                        />
+
+                        <line
+                            id="svg_5"
+                            fill="none"
+                            stroke="#000000"
+                            stroke-width="2"
+                            x1="2.0"
+                            y1="2.0"
+                            x2="2.0"
+                            y2="368"
+                            style="stroke-dashoffset: -370"
+                        />
+                    </svg>
+                    <div class="modal1-inner" style="width: 306px; height: 366px">
+                        <a href="#" class="modal1-close" title="Close Modal">X</a>
+                        <div class="container2" style="color: white" id="container2">
+                            <div class="user">
+                                <form id="newUserForm" class="form1">
+                                    <h1 style="color: white">Iniciar Sesion</h1>
+                                    <div class="inputlog">
+                                        <input type="email" id="email" required />
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="inputlog">
+                                        <input type="password" id="password" required />
+                                        <label>Contraseña</label>
+                                        <div class="forgot">
+                                            <a href="#">Olvido Contraseña</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <button onclick="getdata()" type="submit" value="Ingresar" class="buttonlog">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span> Ingresar
+                                </button>
+                                <div class="div1">
+                                    <div class="line"></div>
+                                    <div class="signup">
+                                        No tiene cuenta?
+                                        <a href="#">Registrarse</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </nav>
-<<<<<<< HEAD
+            <div class="overlay" id="show1">
+                <div class="modal1" style="width: 310px; height: 495px">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 310 495"
+                        preserveAspectRatio="true"
+                        style="width: 310px; position: absolute; height: 495px"
+                    >
+                        <line
+                            id="svg_3"
+                            fill="none"
+                            stroke="#000000"
+                            stroke-width="2"
+                            x1="2.0"
+                            y1="2.0"
+                            x2="308"
+                            y2="2.0"
+                            style="stroke-dashoffset: -310"
+                        />
 
-      <!-- NavBar -->
+                        <line
+                            id="svg_4"
+                            fill="none"
+                            stroke="#000000"
+                            stroke-width="2"
+                            x1="308"
+                            y1="493"
+                            x2="308"
+                            y2="2.0"
+                            style="stroke-dashoffset: -495"
+                        />
 
-=======
-      <!-- "FORMULARIO DE LOGIN" -->
-      <form class="form-login" id="login">
-         <h3 >Inicio de sesion</h3>
-         <input class="form-login-controls" type="text" name="usuario" id="usuario" placeholder="usuario">
-         <input class="form-login-controls" type="password" name="contraseña" id="contraseña" placeholder="contraseña">
-         <p><a href="#">¿No tienes cuenta? Registrate</a></p>
-         <input class="form-login-btn" type="submit" value="iniciar sesion">
-      </form>
->>>>>>> 61c781eb1bbe2685ac8967e6806c74135beadd64
-    </header>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"
-    ></script>
-    <script src="script.js"></script>
-    <script src="uikit/dist/js/uikit-icons.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit-icons.min.js"></script>
-  </body>
+                        <line
+                            id="svg_2"
+                            fill="none"
+                            stroke="#000000"
+                            stroke-width="2"
+                            x1="2.0"
+                            y1="493"
+                            x2="308"
+                            y2="493"
+                        />
+
+                        <line
+                            id="svg_5"
+                            fill="none"
+                            stroke="#000000"
+                            stroke-width="2"
+                            x1="2.0"
+                            y1="2.0"
+                            x2="2.0"
+                            y2="493"
+                            style="stroke-dashoffset: -495"
+                        />
+                    </svg>
+                    <div class="modal1-inner" style="width: 306px; height: 491px">
+                        <a href="#" class="modal1-close" title="Close Modal">X</a>
+                        <div class="container1" style="color: white" id="container1">
+                            <div class="user">
+                                <form id="newUserForm" class="form1">
+                                    <h1 style="color: white">Registrarse</h1>
+                                    <div class="inputlog">
+                                        <input type="text" id="newname" required />
+                                        <label>Nombre</label>
+                                    </div>
+                                    <div class="inputlog">
+                                        <input type="text" id="newlastname" required />
+                                        <label>Apellido</label>
+                                    </div>
+                                    <div class="inputlog">
+                                        <input type="email" id="newemail" required />
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="inputlog">
+                                        <input type="password" id="newpassword" required />
+                                        <label>Contraseña</label>
+                                    </div>
+                                    <div class="inputlog">
+                                        <input type="password" id="newpasswordconf" required />
+                                        <label>Confirme Contraseña</label>
+                                    </div>
+                                </form>
+                                <button onclick="btnCreate()" class="buttonlog">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span> Registar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- boostrap script -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"
+        ></script>
+        <!-- boostrap script -->
+
+        <script src="script.js"></script>
+        <script src="uikit/dist/js/uikit-icons.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit-icons.min.js"></script>
+    </body>
 </html>
