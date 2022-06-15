@@ -1,21 +1,24 @@
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
+    list-style: none;
+    user-select: none;
+}
+
+html {
+    font-size: 10px;
+}
+
+main {
+    overflow-x: hidden;
 }
 
 body {
-    width: 100%;
-    height: 100vh;
+    font-family: oswald;
+    background-color: #222222;
     font-family: Calibri, sans-serif;
 }
-
-header {
-    width: 100%;
-    min-height: 500px;
-}
-
-/* NavBar */
 
 #NavBar {
     background: hsl(0, 0%, 4%);
@@ -258,7 +261,6 @@ a.modal1-open {
 .inputlog {
     margin: 20px 0;
     position: relative;
-    
 }
 
 .inputlog input {
@@ -436,6 +438,401 @@ a:hover {
     width: 100%;
 }
 
-.modalregistroh4{
+.modalregistroh4 {
     margin-top: 5px;
+}
+
+/* main */
+
+main {
+    background: linear-gradient(#222222, #383838, #4a1414);
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+/* estilos carrousel */
+.carrousel__conteiner {
+    order: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#383838, rgb(47, 46, 46));
+    border: 4px solid #4a1414;
+    border-radius: 5px;
+}
+.carrousel__title {
+    font-family: oswald;
+    font-size: 45px;
+    color: #fff;
+    overflow: hidden;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* estilos carrousel */
+/* estilos de los mas vistos */
+
+.top-conteiner {
+    order: 2;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.top {
+    display: block;
+    font-family: oswald;
+    font-size: 70px;
+    color: #fff;
+    text-align: center;
+}
+.top_ul {
+    display: flex;
+    flex-direction: column;
+
+    background: #383838;
+}
+.music {
+    background: #383838;
+    margin-bottom: 10px;
+    font-family: oswald;
+    font-size: 80px;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+}
+.audio {
+    display: block;
+    width: 100%;
+    border: 3px solid rgb(112, 22, 20);
+    border-radius: 27px;
+}
+
+.body {
+    padding: 0 10px;
+    border: 4px solid #4a1414;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#383838, rgb(47, 46, 46));
+}
+@font-face {
+    font-family: "Oswald";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Oswald Regular"), local("Oswald-Regular"),
+        url(http://themes.googleusercontent.com/static/fonts/oswald/v7/-g5pDUSRgvxvOl5u-a_WHw.woff) format("woff");
+}
+
+/* estilos de los mas vistos */
+
+/* estilos del crud */
+
+.crud-body {
+    background-color: #222;
+}
+.catalogo-title {
+    overflow: hidden;
+    color: #ddd;
+    text-align: center;
+    font-size: 4rem;
+    font-family: oswald;
+}
+.crud-subtitle {
+    color: #ffff;
+    font-family: oswald;
+    font-size: 3rem;
+    overflow: hidden;
+}
+/* formulario de subida de archivos */
+.form-subir-body {
+    overflow: hidden;
+    position: absolute;
+    height: 350px;
+    top: 0%;
+    left: 0%;
+    bottom: 0%;
+    right: 0%;
+    margin: auto;
+    display: none;
+    z-index: 4000;
+    font-family: oswald;
+    background-color: #5c1a1a;
+    width: 300px;
+    padding: 10px;
+    border: 4px solid #111;
+}
+.form-subir-body h3 {
+    font-size: 2rem;
+    font-family: oswald;
+    color: #ddd;
+}
+.form-subir-controls {
+    width: 100%;
+    padding: 3px;
+    margin-bottom: 8px;
+}
+.form-subir-controls:hover {
+    border-radius: 0px;
+}
+.form-subir-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #333;
+    color: #fff;
+}
+.form-subir-btn:hover {
+    border-radius: 0;
+    background-color: #444;
+    border: 2px solid #777;
+}
+.form-subir-collapsed {
+    display: block;
+}
+.form-reset-btn {
+    width: 100%;
+    margin-top: 5px;
+    padding: 5px;
+    background-color: #333;
+    color: #fff;
+}
+.form-reset-btn:hover {
+    border-radius: 0;
+    background-color: #444;
+    border: 2px solid #777;
+}
+
+/* formulario de subida de archivos */
+/* estilos de las  cards */
+.crud-card-body {
+    overflow: hidden;
+    box-shadow: 2px 2px 4px 1px rgb(67, 61, 61);
+    border-radius: 10px;
+    border: 4px solid rgb(35, 33, 33);
+    max-width: 18rem;
+    height: 350px;
+    background: rgb(0, 0, 0);
+}
+.crud-img-conteiner {
+    height: 50%;
+}
+.crud-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.crud-card-body h4 {
+    color: #ddd;
+    margin-bottom: 5px;
+    font-size: 2rem;
+    font-family: oswald;
+}
+.crud-card-body p {
+    margin: 10px 0 15px 0;
+    color: #d35555;
+}
+.crud-card-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+    color: #ddd;
+    font-family: oswald;
+}
+
+/* BOTON Y ANIMACION DE CARRITO */
+.crud-card-btn {
+    position: relative;
+    padding: 4px;
+    width: 62%;
+    height: 50px;
+    border: 2px solid #503636;
+    border-radius: 5px;
+    background-color: #6e1e1e;
+    outline: none;
+    cursor: pointer;
+    color: #222;
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+}
+.crud-card-btn:hover {
+    background-color: #892727a3;
+    color: rgb(141, 131, 131);
+    transition: 0.2s background;
+}
+.crud-card-btn:active {
+    transform: scale(0.9);
+}
+
+.crud-card-btn .fa-shopping-cart {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: -10%;
+    font-size: 2em;
+    transform: translate(-50%, -50%);
+}
+.crud-card-btn .fa-box {
+    position: absolute;
+    z-index: 3;
+    top: -20%;
+    left: 52%;
+    font-size: 1.2em;
+    transform: translate(-50%, -50%);
+}
+.crud-card-btn span {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    font-size: 1.2em;
+    color: #fff;
+    transform: translate(-50%, -50%);
+}
+.crud-card-btn span.add-to-cart {
+    opacity: 1;
+}
+.crud-card-btn span.added {
+    opacity: 0;
+}
+
+.crud-card-btn.clicked .fa-shopping-cart {
+    animation: cart 1.5s ease-in-out forwards;
+}
+.crud-card-btn.clicked .fa-box {
+    animation: box 1.5s ease-in-out forwards;
+}
+.crud-card-btn.clicked span.add-to-cart {
+    animation: txt1 1.5s ease-in-out forwards;
+}
+.crud-card-btn.clicked span.added {
+    animation: txt2 1.5s ease-in-out forwards;
+}
+@keyframes cart {
+    0% {
+        left: -10%;
+    }
+    40%,
+    60% {
+        left: 50%;
+    }
+    100% {
+        left: 110%;
+    }
+}
+@keyframes box {
+    0%,
+    40% {
+        top: -20%;
+    }
+    60% {
+        top: 40%;
+        left: 52%;
+    }
+    100% {
+        top: 40%;
+        left: 112%;
+    }
+}
+@keyframes txt1 {
+    0% {
+        opacity: 1;
+    }
+    20%,
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes txt2 {
+    0%,
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* BOTON Y ANIMACION DE CARRITO */
+
+/* boton de submenu */
+.icono-card-menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fff;
+    background-color: #fff;
+}
+/* boton de submenu */
+/* estilos de las  cards */
+
+/* BOTON FLOTANTE DE SUBIR  */
+
+button {
+    border: none;
+    outline: none;
+}
+
+.wrapper {
+    position: fixed;
+    bottom: 40px;
+    right: 70px;
+    margin: auto;
+    padding: 50px 0;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    z-index: 2147483647;
+}
+
+.circle {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    background-color: #b51818;
+    opacity: 0.5;
+    display: flex;
+    transition: 0.2s;
+}
+
+img {
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    transition: 0.5s;
+}
+
+.circle:hover,
+.circle:focus {
+    cursor: pointer;
+}
+
+/* BOTON FLOTANTE DE SUBIR */
+
+/* estilos del crud */
+@media screen and (max-width: 600px) {
+    .mcollapsed {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
 }
