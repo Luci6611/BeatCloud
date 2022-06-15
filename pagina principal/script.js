@@ -35,20 +35,23 @@ function crearNuevaCancion() {
 async function posteoCancion(newCancion) {
   const response = await fetch(apiURL, {
     method: "POST",
-    body: JSON.stringify(newCancion.value),
+    body: JSON.stringify(newCancion),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
-  })
-  .then((response) => response.json())
-  .then((json) => console.log(json));
+  });
+  const data = await response.json();
 
-  return response;
+  console.log(data);
+  return data;
 }
-function btnCreate(){
-  let cancion = crearNuevaCancion;
-  posteoCancion(cancion)
-  clearForm()
+function btnCreate() {
+  let cancion = crearNuevaCancion();
+ 
+  posteoCancion(cancion).then((response) => {
+    console.log(response);
+  });
+  clearForm();
 }
 // CARGAR CANCIONES
 function cargarCanciones() {
