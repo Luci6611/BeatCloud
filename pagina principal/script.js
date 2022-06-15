@@ -190,24 +190,38 @@ async function postUser(newUser) {
 }
 
 function btnCreate() {
-    let newUser = newObjUser();
-    let passwordconf = newpasswordconf.value;
-    console.debug(newUser.password);
-    console.debug(passwordconf);
-    if (newUser.password != passwordconf) {
-     
-        alert("contraseña incorrecta");
-    } else {
-        postUser(newUser).then(() => {});
-    
-        alert("ingreso correcto");
-    }
-    newname.value = "";
-    newlastname.value = "";
-    newemail.value = "";
-    newpassword.value = "";
-    newpasswordconf.value = "";
+  let usuarios = getusers();
+  let newUser = newObjUser();
+  let passwordconf = newpasswordconf.value;
+  let email1 = newemail.value;
+  let contador1 = 0;
+  let contador2 = 0;
+
+  usuarios.then((response) => {
+      response.map((usuario) => {
+          contador1++;
+          if (email1 == usuario.email) {
+              alert('Email ya registrado')
+          } else {
+              contador2++;
+          }
+      });
+      if (contador1 == contador2) {
+          if (newUser.password != passwordconf) {
+              alert('Contraseña incorrecta');
+          } else {
+              postUser(newUser).then(() => {});
+              alert("Registro exitoso");
+          }
+      }
+  });
+  newname.value = "";
+  newlastname.value = "";
+  newemail.value = "";
+  newpassword.value = "";
+  newpasswordconf.value = "";
 }
+
 // MODALES DE CRUD CONTROLS
 
 // ANIMACION DE CARRITO
