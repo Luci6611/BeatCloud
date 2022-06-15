@@ -111,24 +111,24 @@
         <!-- "FORMULARIO DE LOGIN" -->
         <form class="form-login" id="login">
             <h3>Inicio de sesion</h3>
-            <input class="form-login-controls" type="text" name="usuario" id="usuario" placeholder="usuario">
-            <input class="form-login-controls" type="password" name="contraseña" id="contraseña"
+            <input class="form-login-controls" type="email" name="email" id="email" placeholder="email">
+            <input class="form-login-controls" type="password" name="contraseña" id="password"
                 placeholder="contraseña">
             <p><a href="#">¿No tienes cuenta? Registrate</a></p>
-            <input class="form-login-btn" type="submit" value="iniciar sesion">
+            <input onclick="getdata()" class="form-login-btn" type="submit" value="iniciar sesion">
         </form>
         <!-- FORMULARIO DE REGISTRO -->
         <form class="form-register" id="register">
             <h3>Registrarse</h3>
-            <input class="form-register__controls" type="text" name="nombre" id="nombrer" placeholder="nombre">
-            <input class="form-register__controls" type="text" name="apellido" id="apellidor" placeholder="apellido">
-            <input class="form-register__controls" type="number" name="edad" id="edadr" placeholder="edad">
-            <input class="form-register__controls" type="email" name="email" id="emailr" placeholder="email">
-            <input class="form-register__controls" type="text" name="usuario" id="usuarior" placeholder="usuario">
-            <input class="form-register__controls" type="password" name="contraseña" id="contraseñar"
+            <input class="form-register__controls" type="text" name="nombre" id="newname" placeholder="nombre">
+            <input class="form-register__controls" type="text" name="apellido" id="newlastname" placeholder="apellido">
+            <input class="form-register__controls" type="email" name="email" id="newemail" placeholder="email">
+            <input class="form-register__controls" type="password" name="contraseña" id="newpassword"
+                placeholder="contraseña">
+            <input class="form-register__controls" type="password" name="contraseña" id="newpasswordconf"
                 placeholder="contraseña">
             <p>Acepto los <a href="#">terminos y condiciones</a></p>
-            <input type="submit" value="registrar" class="form-register__btn">
+            <input onclick="btnCreate()" type="submit" value="registrar" class="form-register__btn">
         </form>
     </header>
     <main>

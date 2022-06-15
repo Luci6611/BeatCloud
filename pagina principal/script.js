@@ -91,7 +91,123 @@ const formr = document.getElementById("register");
 botonr.addEventListener("click", () => {
   formr.classList.toggle("rcollapsed");
 });
+// funciones de usuarios
+//LOGIN Y REGISTRO
 
+const mockApiURLUser = "https://62924c39cd0c91932b7055c5.mockapi.io/login/User";
+let email = document.getElementById("email");
+let password = document.getElementById("password");
+let newname = document.getElementById("newname");
+let newlastname = document.getElementById("newlastname");
+let newedad = document.getElementById("newedad");
+let newemail = document.getElementById("newemail");
+let newpassword = document.getElementById("newpassword");
+let newpasswordconf = document.getElementById("newpasswordconf");
+
+//Obtener Usuario
+
+async function getusers() {
+    const response = await fetch(mockApiURLUser);
+    let data = await response.json();
+    return data;
+}
+
+function modallogin() {
+    let newmodalbody = document.createElement("h4");
+    newmodalbody.className = "modalregistroh4";
+    newmodalbody.innerHTML = "&#10004 - Ingreso correcto";
+    document.getElementById("container2").append(newmodalbody);
+    return newmodal;
+}
+
+function modalloginmal() {
+    let newmodalbody = document.createElement("h4");
+    newmodalbody.className = "modalregistroh4";
+    newmodalbody.innerHTML = "X - Ingreso incorrecto";
+    document.getElementById("container2").append(newmodalbody);
+    return newmodal;
+}
+
+function getdata() {
+    let usuarios = getusers();
+    let contador1 = 0;
+    let contador2 = 0;
+    usuarios.then((response) => {
+        response.map((usuario) => {
+            contador1++;
+            if (email.value == usuario.email && password.value == usuario.password) {
+               alert("contraseña incorrecta")
+                bandera = true;
+            } else {
+                contador2++;
+            }
+        });
+        if (contador1 == contador2) {
+           alert("ingreso exitoso")
+        }
+        email.value = "";
+        password.value = "";
+    });
+}
+
+//Crear Usuario
+
+function modalregistro() {
+    let newmodalbody = document.createElement("h4");
+    newmodalbody.className = "modalregistroh4";
+    newmodalbody.innerHTML = "&#10004 - Registro correcto";
+    document.getElementById("container1").append(newmodalbody);
+    return newmodal;
+}
+
+function modalregistromal() {
+    let newmodalbody = document.createElement("h4");
+    newmodalbody.className = "modalregistroh4";
+    newmodalbody.innerHTML = "X - Contraseña incorrecta";
+    document.getElementById("container1").append(newmodalbody);
+    return newmodal;
+}
+
+function newObjUser() {
+    let newUser = {
+        name: newname.value,
+        lastname: newlastname.value,
+        email: newemail.value,
+        password: newpassword.value,
+    };
+    return newUser;
+}
+
+async function postUser(newUser) {
+    const response = await fetch(mockApiURLUser, {
+        method: "POST",
+        body: JSON.stringify(newUser),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+        },
+    }).then((response) => response.json());
+    return response;
+}
+
+function btnCreate() {
+    let newUser = newObjUser();
+    let passwordconf = newpasswordconf.value;
+    console.debug(newUser.password);
+    console.debug(passwordconf);
+    if (newUser.password != passwordconf) {
+     
+        alert("contraseña incorrecta");
+    } else {
+        postUser(newUser).then(() => {});
+    
+        alert("ingreso correcto");
+    }
+    newname.value = "";
+    newlastname.value = "";
+    newemail.value = "";
+    newpassword.value = "";
+    newpasswordconf.value = "";
+}
 // MODALES DE CRUD CONTROLS
 
 // ANIMACION DE CARRITO
