@@ -242,5 +242,4 @@ const modalSubir = document.getElementById("form-subir");
 botonSubir.addEventListener("click",()=>{
   modalSubir.classList.toggle("form-subir-collapsed")
 })
-//carga inicial
-loadUsers();
+

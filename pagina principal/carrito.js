@@ -1,24 +1,34 @@
 let tablaCuerpo = document.getElementById("tablaCuerpo");
-
+let datos = [];
 
 const CapturarDatos = (titulo, portada) => {
+
   const titulo1 = document.getElementById(titulo);
   const cardPortada = document.getElementById(portada);
   let autor = titulo1.nextElementSibling.innerHTML;
   let imagenPortada = cardPortada.src;
   let tituloCancion = titulo1.innerText;
-  let datos = { titulo: tituloCancion, autor: autor, Portada: imagenPortada };
-  /*   JSON.stringify(localStorage.getItem("datos",datos)); */
-  LlenarCarrito(datos);
+  datos.push({portada:imagenPortada , autor: autor,titulo: tituloCancion} );
+  console.table(datos);
+  LlenarCarrito();
+
 };
 
-const LlenarCarrito = (datos) => {
-  tablaCuerpo.innerHTML = `
-        <tr>
-        <th><img src="${datos.Portada}" alt="portada" ></th>
-        <th>${datos.autor}</th>
-        <th>${datos.titulo}</th>
-      </tr>`;
+
+const LlenarCarrito = () => {
+
+ let row = document.createElement("tr");
+  datos.map(dato => {
+      let datosCarrito = `
+        <th><img src="${dato.portada}" alt="portada" ></th>
+        <th>${dato.autor}</th>
+        <th>${dato.titulo}</th>
+      `;
+  let carrito =tablaCuerpo.appendChild(row);
+  carrito.innerHTML=datosCarrito;
+  
+  });
+
 
 };
 
