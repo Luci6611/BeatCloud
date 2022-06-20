@@ -3,6 +3,7 @@ const apiURL = "https:62a8f315ec36bf40bdb0cdde.mockapi.io/cancion";
 
 // VARIABLES
 let newNombreCancion = document.getElementById("cancionnombre");
+let newCancionPrecio = document.getElementById("cancionprecio")
 let newAutor = document.getElementById("cancionautor");
 let newCancionURL = document.getElementById("cancionportada");
 let newFormSubir = document.getElementById("form-subir");
@@ -27,6 +28,7 @@ function crearNuevaCancion() {
     "nombre":newNombreCancion.value,
     "autor":newAutor.value,
     "url":newCancionURL.value,
+    "precio":newCancionPrecio.value,
     "genero":newSeccionGenero.value,
   };
   return newCancion;
@@ -45,20 +47,42 @@ async function posteoCancion(newCancion) {
   console.log(data);
   return data;
 }
-function btnCreate() {
+function btnCreatec() {
   let cancion = crearNuevaCancion();
+
  
   posteoCancion(cancion).then((response) => {
     console.log(response);
   });
   clearForm();
 }
+
 // CARGAR CANCIONES
 function cargarCanciones() {
   let canciones = getcanciones();
   canciones.then((response) => {
    response.map((cancion) => {
     cancion.nombre, cancion.autor, cancion.url,cancion.genero,cancion.id;
+    let dato = `
+    <!-- card -->
+    <div class="crud-card-body">
+        <div class="crud-img-conteiner">
+            <img class="crud-card-img" id="card-portada-Helloween"
+                src="${cancion.url}" alt="portada">
+        </div>
+        <div class="crud-card-text">
+            <h4 id='card-titulo-Helloween'>${cancion.nombre}</h4>
+            <p>${cancion.autor}</p>
+             <p class="bi bi-currency-dollar" id="precio-Helloween"> ${cancion.precio}</p>
+            <button class="crud-card-btn"
+                onclick="CapturarDatos('card-titulo-Helloween' , 'card-portada-Helloween', 'precio-Helloween')">
+                <span class="add-to-cart">Agregar al carrito</span>
+                <span class="added">Agregado</span>
+                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-box"></i></button>
+        </div>
+    </div>
+    <!-- card  -->`
     });
   });
 }
