@@ -62,7 +62,7 @@ function cargarCanciones() {
   let canciones = getcanciones();
   canciones.then((response) => {
    response.map((cancion) => {
-    cancion.nombre, cancion.autor, cancion.url,cancion.genero,cancion.id;
+  
     let dato = `
     <!-- card -->
     <div class="crud-card-body">
