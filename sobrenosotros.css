@@ -16,7 +16,9 @@ table img{
 }
 body {
   font-family: oswald;
-  background-color: #222222;
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(#060505,rgba(98, 5, 5, 0.933),#060505);
 }
 
 #NavBar {
@@ -288,52 +290,79 @@ input:hover {
   z-index: 5;
 }
 
-
-/* cards */
-.grid-conteiner{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.sobrenosotros__titulo{
+  overflow: hidden;
+  color: rgb(104, 14, 14);
+  text-align: center;
+  font-size: 5rem;
+  font-family: oswald;
+  text-transform: uppercase;
+  text-shadow: 2px 2px rgb(71, 66, 66);
  
-    width: 100%;
-    height: 100vh;
-    background:linear-gradient(rgb(92, 32, 23),rgb(118, 39, 39),#111);
 }
-.crud-card-body {
+/* CARDS FLIP */
+.flex-conteiner{
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+ 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cards-conteiner{
+  width: 500px;
+  height: 500px;
+  perspective: 1000px;
+  margin: 20px 20px;
+}
+.cards-conteiner .flip-cards-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.7s ease-in-out;
+  transform-style: preserve-3d;
+}
+.cards-conteiner:hover .flip-cards-inner{
+  transform: rotateY(180deg);
+}
+.cards-conteiner .flip-card-front,
+.cards-conteiner .flip-card-back{
 
-    overflow: hidden;
-    box-shadow: 2px 2px 4px 1px rgb(67, 61, 61);
-    border-radius: 10px;
-    border: 4px solid rgb(35, 33, 33);
-    margin: 5px;
-    max-width: clamp(200px,40%,18rem);
-    height: 350px;
-    background: rgb(0, 0, 0);
-  }
-  .crud-img-conteiner {
-    height: 50%;
-  }
-  .crud-card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .crud-card-body h4 {
-    color: #ddd;
-    margin-bottom: 5px;
-    font-size: 2rem;
-    font-family: oswald;
-  }
-  .crud-card-body p {
-    margin: 10px 0 15px 0;
-    color: #d35555;
-  }
-  .crud-card-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 50%;
-    color: #ddd;
-    font-family: oswald;
-  }
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.cards-conteiner .flip-card-front{
+  background-color: #777;
+  color: #Fff;
+  object-fit: cover;
+  overflow: hidden;
+}
+.cards-conteiner .flip-card-front img{
+  min-width: 100%;
+  height: 100%;
+}
+.cards-conteiner .flip-card-back{
+  background-image: linear-gradient(to bottom, #0c0909f6, #000000, #6a1313, #000000, #030202);
+  color: #fff;
+  transform: rotateY(180deg);
+}
+.cards-conteiner .flip-card-back h3{
+  font-size: 3rem;
+  font-weight: bold;
+  color: #6a1313;
+  text-shadow: 2px 2px 3px rgb(217, 34, 34);
+  margin-bottom: 20px;
+}
+.cards-conteiner .flip-card-back p{
+  font-size: 2rem;
+  color: rgb(167, 162, 162);
+  font-weight: bold;
+  text-shadow: 2px 2px 3px rgb(213, 186, 186);
+
+}
+
+/* CARDS FLIP */
