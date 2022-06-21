@@ -142,12 +142,21 @@ function getdata() {
                 contador2++;
             }
         });
+         // redireccion,inicio seccion a pagina admin
+        if(email.value == "administrador@gmail.com" && password.value == "admin"){
+          window.location.href="/administrador/admin.html";
+         
+         
+         };
+
         if (contador1 == contador2) {
            alert("ingreso exitoso")
         }
         email.value = "";
         password.value = "";
     });
+           
+
 }
 
 //Crear Usuario
