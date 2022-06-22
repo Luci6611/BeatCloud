@@ -455,12 +455,11 @@ img {
 /* formulario de subida de archivos */
 /* estilos de las  cards */
 .crud-card-body {
-  overflow: hidden;
   box-shadow: 2px 2px 4px 1px rgb(67, 61, 61);
   border-radius: 10px;
   border: 4px solid rgb(35, 33, 33);
   max-width: 18rem;
-  height: 350px;
+  height: 460px;
   background: rgb(0, 0, 0);
 }
 .crud-img-conteiner {
@@ -536,7 +535,7 @@ img {
   z-index: 3;
   left: 50%;
   top: 50%;
-  font-size: 1.2em;
+  font-size: 1em;
   color: #fff;
   transform: translate(-50%, -50%);
 }

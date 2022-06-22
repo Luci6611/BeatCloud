@@ -1,5 +1,4 @@
 <html lang="es">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -58,7 +57,8 @@
                                 <a class="uk-button" href="#" id="Buttons-Nav">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="uk-button" href="/sobrenosotros/sobrenosotros.html" id="Buttons-Nav">About Us</a>
+                                <a class="uk-button" href="/sobrenosotros/sobrenosotros.html" id="Buttons-Nav">About
+                                    Us</a>
                             </li>
                             <li class="nav-item">
                                 <a class="uk-button" href="#" id="btnr">Registrarse</a>
@@ -88,16 +88,17 @@
                         <table class="table table-dark table-striped">
                             <tr>
                                 <thead>
-                                 <tr>
-                                    <th>Portada</th>
-                                    <th>Titulo</th>
-                                    <th>Autor</th>
-                                  </tr>
-                                 </thead>
-                                 <tbody id="tablaCuerpo">
-                                    
-                                 </tbody>
-                          </table>
+                                    <tr>
+                                        <th>Portada</th>
+                                        <th>Titulo</th>
+                                        <th>Autor</th>
+                                        <th>Precio</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablaCuerpo">
+
+                                </tbody>
+                        </table>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" onclick="VaciarCarrito()">Vaciar carrito</button>
@@ -112,8 +113,7 @@
         <form class="form-login" id="login">
             <h3>Inicio de sesion</h3>
             <input class="form-login-controls" type="email" name="email" id="email" placeholder="email">
-            <input class="form-login-controls" type="password" name="contraseña" id="password"
-                placeholder="contraseña">
+            <input class="form-login-controls" type="password" name="contraseña" id="password" placeholder="contraseña">
             <p><a href="#">¿No tienes cuenta? Registrate</a></p>
             <input onclick="getdata()" class="form-login-btn" type="submit" value="iniciar sesion">
         </form>
@@ -148,13 +148,13 @@
                         </div>
                         <div class="carousel-inner h-100">
                             <div class="carousel-item active">
-                                <img src="/pagina principal/img/foto 1.webp" class="d-block w-100 ñ" alt="...">
+                                <img src="https://images4.alphacoders.com/108/thumb-1920-108566.jpg" class="d-block w-100 ñ" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="/pagina principal/img/foto 2.webp" class="d-block w-100" alt="...">
+                                <img src="https://images4.alphacoders.com/756/thumb-1920-75674.jpg" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="/pagina principal/img/foto3.jpeg" class="d-block w-100" alt="...">
+                                <img src="https://images4.alphacoders.com/115/thumb-1920-115256.jpg" class="d-block w-100" alt="...">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -172,7 +172,6 @@
                 <!-- fin de carrousel -->
                 <!-- inicio de seccion los mas vistos  -->
                 <div class="top-conteiner col-sm-12 mt-sm-3 col-md-6 ">
-
                     <div class="body">
                         <span class="top">Top 5</span>
                         <div class="title"> </div>
@@ -208,24 +207,20 @@
                 <!-- fin de seccion los mas vistos -->
         </section>
         <!-- INICIO DEL CRUD -->
-        <!-- BOTON FLOTANTE DE SUBIDA DE ARCHIVOS -->
-        <div class="wrapper">
-            <button class="circle" id="btnsubir">
-                <img id="addSign"
-                    src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/2x/btw_ic_speeddial_white_24dp_2x.png"
-                    alt="" />
-            </button>
-        </div>
-        <!-- BOTON FLOTANTE DE SUBIDA DE ARCHIVOS -->
+        
         <h3 class="catalogo-title">catalogo</h3>
 
         <!-- FORMULARIO DE SUBIDA DE ARCHIVOS -->
         <form class="form-subir-body" id="form-subir" action="">
             <h3>Sube tu cancion</h3>
-            <input class="form-subir-controls" type="text" name="cancionportada" id="cancionportada" placeholder="ingresa url de portada">
-            <input class="form-subir-controls" type="text" name="cancionnombre" id="cancionnombre" placeholder="ingresa el nombre">
-            <input class="form-subir-controls" type="text" name="cancionautor" id="cancionautor" placeholder="ingresa el autor">
-            <input class="form-subir-controls" type="text" name="canciongenero" id="canciongenero" placeholder="ingresa el genero">
+            <input class="form-subir-controls" type="text" name="cancionportada" id="cancionportada"
+                placeholder="ingresa url de portada">
+            <input class="form-subir-controls" type="text" name="cancionnombre" id="cancionnombre"
+                placeholder="ingresa el nombre">
+            <input class="form-subir-controls" type="text" name="cancionautor" id="cancionautor"
+                placeholder="ingresa el autor">
+            <input class="form-subir-controls" type="text" name="canciongenero" id="canciongenero"
+                placeholder="ingresa el genero">
             <input class="form-subir-btn" type="submit" onclick=" btnCreate()" value="subir">
             <input type="reset" class="form-reset-btn" onclick="clearForm()" value="resetear">
 
@@ -251,12 +246,13 @@
                             <div class="crud-card-text">
                                 <h4 id='card-titulo-Enter'>Enter the dragon</h4>
                                 <p>The ShadowHunters</p>
-                                <button class="crud-card-btn" onclick="CapturarDatos('card-titulo-Enter','card-portada-Enter')">
-                                    <span  class="add-to-cart">Agregar al carrito</span>
+                                 <p class="bi bi-currency-dollar" id="precio-Enter"> 345</p>
+                                <button class="crud-card-btn"
+                                    onclick="CapturarDatos('card-titulo-Enter','card-portada-Enter','precio-Enter')">
+                                    <span class="add-to-cart">Agregar al carrito</span>
                                     <span class="added">Agregado</span>
                                     <i class="fas fa-shopping-cart"></i>
                                     <i class="fas fa-box"></i></button>
-
                             </div>
                         </div>
                         <!-- card  -->
@@ -272,7 +268,9 @@
                             <div class="crud-card-text">
                                 <h4 id='card-titulo-Helloween'>Helloween</h4>
                                 <p>skulls</p>
-                                <button class="crud-card-btn" onclick="CapturarDatos('card-titulo-Helloween' , 'card-portada-Helloween')">
+                                 <p class="bi bi-currency-dollar" id="precio-Helloween"> 950</p>
+                                <button class="crud-card-btn"
+                                    onclick="CapturarDatos('card-titulo-Helloween' , 'card-portada-Helloween', 'precio-Helloween')">
                                     <span class="add-to-cart">Agregar al carrito</span>
                                     <span class="added">Agregado</span>
                                     <i class="fas fa-shopping-cart"></i>
@@ -289,9 +287,11 @@
                                     src="https://images4.alphacoders.com/292/thumb-1920-292226.jpg" alt="portada">
                             </div>
                             <div class="crud-card-text">
-                                <h4 class='card-Killwitch'>Killwitch Engage</h4>
+                                <h4 id='card-titulo-Killwitch'>Killwitch Engage</h4>
                                 <p>The killers</p>
-                                <button class="crud-card-btn">
+                                 <p class="bi bi-currency-dollar" id="precio-Killwitch"> 275</p>
+                                <button class="crud-card-btn"
+                                    onclick="CapturarDatos('card-titulo-Killwitch', 'card-portada-Killwitch','precio-Killwitch')">
                                     <span class="add-to-cart">Agregar al carrito</span>
                                     <span class="added">Agregado</span>
                                     <i class="fas fa-shopping-cart"></i>
@@ -307,7 +307,7 @@
                 <section class="crud-section  justify-content-center   ">
                     <h2 class="crud-subtitle " id="pop">pop</h2>
                     <div class="row gap-4 gap-sm-0  gap-md-0   mx-auto ">
-                        <div class="col-12 col-sm-6  col-md-4">
+                        <div class="col-12 col-sm-6  col-md-4" id="cajaPrincipal">
                             <!-- card  -->
                             <div class="crud-card-body">
                                 <div class="crud-img-conteiner">
@@ -317,7 +317,9 @@
                                 <div class="crud-card-text">
                                     <h4 id='card-titulo-Day'>Day of the beats</h4>
                                     <p>Wham</p>
-                                    <button class="crud-card-btn" onclick="CapturarDatos('card-titulo-Day', 'card-portada-Day')">
+                                     <p class="bi bi-currency-dollar" id="precio-Day"> 150</p>
+                                    <button class="crud-card-btn"
+                                        onclick="CapturarDatos('card-titulo-Day', 'card-portada-Day', 'precio-Day')">
                                         <span class="add-to-cart">Agregar al carrito</span>
                                         <span class="added">Agregado</span>
                                         <i class="fas fa-shopping-cart"></i>
@@ -332,15 +334,16 @@
                             <!-- card  -->
                             <div class="crud-card-body">
                                 <div class="crud-img-conteiner">
-                                    <img class="crud-card-img " id="card-portada-Acoustic"
+                                    <img class="crud-card-img" id="card-portada-Acoustic"
                                         src="https://img.freepik.com/foto-gratis/chicos-mano-guitarra_1423-151.jpg?t=st=1654891288~exp=1654891888~hmac=5f1d4d687538fafa01b53d4b7b5b71701abc5099ec6bfe2cb0f3cd97c9580178&w=900"
                                         alt="portada">
                                 </div>
                                 <div class="crud-card-text">
                                     <h4 id='card-titulo-Acoustic'>Acoustic Compilation</h4>
                                     <p>The neighbor</p>
+                                     <p class="bi bi-currency-dollar" id="precio-neighbor"> 566</p>
                                     <button class="crud-card-btn"
-                                        onclick="CapturarDatos('card-titulo-Acoustic','card-portada-Acoustic')">
+                                        onclick="CapturarDatos('card-titulo-Acoustic','card-portada-Acoustic', 'precio-neighbor')">
                                         <span class="add-to-cart">Agregar al carrito</span>
                                         <span class="added">Agregado</span>
                                         <i class="fas fa-shopping-cart"></i>
@@ -359,7 +362,9 @@
                                 <div class="crud-card-text">
                                     <h4 id='card-titulo-Try'>Try</h4>
                                     <p>Pink</p>
-                                    <button class="crud-card-btn" onclick="CapturarDatos('card-titulo-Try', 'card-portada-Try')">
+                                     <p class="bi bi-currency-dollar" id="precio-Try"> 700</p>
+                                    <button class="crud-card-btn"
+                                        onclick="CapturarDatos('card-titulo-Try', 'card-portada-Try', 'precio-Try')">
                                         <span class="add-to-cart">Agregar al carrito</span>
                                         <span class="added">Agregado</span>
                                         <i class="fas fa-shopping-cart"></i>
@@ -387,7 +392,9 @@
                                     <div class="crud-card-text">
                                         <h4 id='card-titulo-Undergroud'>Undergroud</h4>
                                         <p>Russian Rap</p>
-                                        <button class="crud-card-btn" onclick="CapturarDatos('card-titulo-Undergroud', 'card-portada-Undergroud ')">
+                                         <p class="bi bi-currency-dollar" id="precio-Undergroud"> 950</p>
+                                        <button class="crud-card-btn"
+                                            onclick="CapturarDatos('card-titulo-Undergroud', 'card-portada-Undergroud ', 'precio-Undergroud')">
                                             <span class="add-to-cart">Agregar al carrito</span>
                                             <span class="added">Agregado</span>
                                             <i class="fas fa-shopping-cart"></i>
@@ -409,7 +416,9 @@
                                     <div class="crud-card-text">
                                         <h4 id='card-titulo-Most'>Most Wanted</h4>
                                         <p>Snoop Dog</p>
-                                        <button class="crud-card-btn" onclick="CapturarDatos('card-titulo-Most' , 'card-portada-Most')">
+                                         <p class="bi bi-currency-dollar" id="precio-Most"> 1500</p>
+                                        <button class="crud-card-btn"
+                                            onclick="CapturarDatos('card-titulo-Most' , 'card-portada-Most', 'precio-Most')">
                                             <span class="add-to-cart">Agregar al carrito</span>
                                             <span class="added">Agregado</span>
                                             <i class="fas fa-shopping-cart"></i>
@@ -429,7 +438,9 @@
                                     <div class="crud-card-text">
                                         <h4 id='card-titulo-Epic'>Epic Rap Battles</h4>
                                         <p>57</p>
-                                        <button class="crud-card-btn" onclick="CapturarDatos('card-titulo-Epic', 'card-portada-Epic')">
+                                         <p class="bi bi-currency-dollar" id="precio-Epic"> 800</p>
+                                        <button class="crud-card-btn"
+                                            onclick="CapturarDatos('card-titulo-Epic', 'card-portada-Epic', 'precio-Epic')">
                                             <span class="add-to-cart">Agregar al carrito</span>
                                             <span class="added">Agregado</span>
                                             <i class="fas fa-shopping-cart"></i>
@@ -458,7 +469,9 @@
                                         <div class="crud-card-text">
                                             <h4 id='card-titulo-soul'>this is my soul</h4>
                                             <p>Megadeth</p>
-                                            <button class="crud-card-btn" onclick="CapturarDatos('card-titulo-soul', 'card-portada-soul')">
+                                             <p class="bi bi-currency-dollar" id="precio-soul"> 750</p>
+                                            <button class="crud-card-btn"
+                                                onclick="CapturarDatos('card-titulo-soul', 'card-portada-soul', 'precio-soul')">
                                                 <span class="add-to-cart">Agregar al carrito</span>
                                                 <span class="added">Agregado</span>
                                                 <i class="fas fa-shopping-cart"></i>
@@ -480,7 +493,9 @@
                                         <div class="crud-card-text">
                                             <h4 id='card-titulo-specter'>the specter</h4>
                                             <p>Ghost</p>
-                                            <button class="crud-card-btn" onclick="CapturarDatos('card-titulo-specter', 'card-portada-specter')">
+                                             <p class="bi bi-currency-dollar" id="precio-specter"> 1170</p>
+                                            <button class="crud-card-btn"
+                                                onclick="CapturarDatos('card-titulo-specter', 'card-portada-specter', 'precio-specter')">
                                                 <span class="add-to-cart">Agregar al carrito</span>
                                                 <span class="added">Agregado</span>
                                                 <i class="fas fa-shopping-cart"></i>
@@ -501,7 +516,9 @@
                                         <div class="crud-card-text">
                                             <h4 id='card-titulo-single'>My single Rap</h4>
                                             <p>Ozzy Osbourne</p>
-                                            <button class="crud-card-btn" onclick="CapturarDatos('card-titulo-single', 'card-portada-single')">
+                                             <p class="bi bi-currency-dollar" id="precio-single"> 490</p>
+                                            <button class="crud-card-btn"
+                                                onclick="CapturarDatos('card-titulo-single', 'card-portada-single', 'precio-single')">
                                                 <span class="add-to-cart">Agregar al carrito</span>
                                                 <span class="added">Agregado</span>
                                                 <i class="fas fa-shopping-cart"></i>
@@ -509,12 +526,10 @@
                                         </div>
                                     </div>
                                     <!-- card  -->
-
                                 </div>
                             </div>
                             <!-- FIN SECCION METAL -->
                             <!-- SECCION ELECTRONICA  -->
-
                             <section class="crud-section ">
                                 <h2 class="crud-subtitle " id="electronica">ELECTRONICA</h2>
                                 <div class="row gap-4 gap-sm-0  gap-md-0   mx-auto">
@@ -529,7 +544,9 @@
                                             <div class="crud-card-text">
                                                 <h4 id='card-titulo-Purified'>Purified 300</h4>
                                                 <p>Nora En Pure</p>
-                                                <button class="crud-card-btn" onclick="CapturarDatos('card-titulo-Purified', 'card-portada-Purified')">
+                                                 <p class="bi bi-currency-dollar" id="precio-Purified"> 76</p>
+                                                <button class="crud-card-btn"
+                                                    onclick="CapturarDatos('card-titulo-Purified', 'card-portada-Purified', 'precio-Purified')">
                                                     <span class="add-to-cart">Agregar al carrito</span>
                                                     <span class="added">Agregado</span>
                                                     <i class="fas fa-shopping-cart"></i>
@@ -550,7 +567,9 @@
                                             <div class="crud-card-text">
                                                 <h4 id='card-titulo-alone'>World alone</h4>
                                                 <p>Zenit Music</p>
-                                                <button class="crud-card-btn" onclick="CapturarDatos('card-titulo-alone', 'card-portada-alone')">
+                                                 <p class="bi bi-currency-dollar" id="precio-alone"> 350</p>
+                                                <button class="crud-card-btn"
+                                                    onclick="CapturarDatos('card-titulo-alone', 'card-portada-alone' , 'precio-alone')">
                                                     <span class="add-to-cart">Agregar al carrito</span>
                                                     <span class="added">Agregado</span>
                                                     <i class="fas fa-shopping-cart"></i>
@@ -570,7 +589,9 @@
                                             <div class="crud-card-text">
                                                 <h4 id='card-titulo-step'>step</h4>
                                                 <p>Minimal Techno</p>
-                                                <button class="crud-card-btn" onclick="CapturarDatos('card-portada-step', 'card-titulo-step')">
+                                                 <p class="bi bi-currency-dollar" id="precio-step"> 1200</p>
+                                                <button class="crud-card-btn"
+                                                    onclick="CapturarDatos('card-titulo-step', 'card-portada-step','precio-step')">
                                                     <span class="add-to-cart">Agregar al carrito</span>
                                                     <span class="added">Agregado</span>
                                                     <i class="fas fa-shopping-cart"></i>
@@ -580,7 +601,7 @@
                                         <!-- card  -->
                                     </div>
                                 </div>
-                          <!-- FIN SECCION ELECTRONICA -->
+                                <!-- FIN SECCION ELECTRONICA -->
                             </section>
         </div>
         <!-- FIN DEL CRUD -->
@@ -617,12 +638,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
-  
+
     <!-- iconos linkeo -->
     <script src="uikit/dist/js/uikit-icons.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit-icons.min.js"></script>
-      <!-- boostrap script -->
+    <!-- boostrap script -->
     <script src="script.js"></script>
     <script src="carrito.js"></script>
 </body>

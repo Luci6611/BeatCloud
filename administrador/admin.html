@@ -1,0 +1,721 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="shortcut icon" href="/img/music.png" type="image/x-icon">
+    <!-- Boostrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
+    <!-- Linkeo de boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/css/uikit.min.css" />
+    <!-- Linkeo de font avesome-->
+    <script src="https://kit.fontawesome.com/d4f047ff09.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg" id="NavBar">
+            <div class="container-fluid">
+                <div class="uk-navbar-left">
+                    <ul class="uk-navbar-nav">
+                        <a class="uk-navbar-toggle" href="#" id="Button-Menu" onclick="openNav()">
+                            <span uk-navbar-toggle-icon></span>
+                            <span class="uk-margin-small-left">Menu</span>
+                        </a>
+                        <div id="mySidenav" class="sidenav">
+                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                            <a href="#rock">ROCK</a>
+                            <a href="#pop">POP</a>
+                            <a href="#rap">RAP</a>
+                            <a href="#metal">METAL</a>
+                            <a href="#electronica">ELECTRONICA</a>
+                        </div>
+                        <li>
+                            <a href="#" id="Button-Menu"><img class="logaso" src="/img/logo.png" alt="logo"></a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span uk-navbar-toggle-icon id="Button-Menu"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="uk-navbar-right">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <div class="uk-button botones-font" href="#">
+                                    <input placeholder="Search" type="search" class="input" required="" />
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="uk-button" href="#" id="Buttons-Nav">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="uk-button" href="/sobrenosotros/sobrenosotros.html" id="Buttons-Nav">About
+                                    Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="uk-button" href="#" id="btnr">Registrarse</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="uk-button" href="#" uk-icon="icon:cart" id="Buttons-Nav"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="btn" class="uk-button " href="#" uk-icon="icon:user"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </nav>
+        <!-- Modal -->
+        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable  ">
+                <div class="modal-content bg-black">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-light" id="exampleModalLabel">carrito</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-dark table-striped">
+                            <tr>
+                                <thead>
+                                    <tr>
+                                        <th>Portada</th>
+                                        <th>Titulo</th>
+                                        <th>Autor</th>
+                                        <th>Precio</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablaCuerpo">
+
+                                </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" onclick="VaciarCarrito()">Vaciar carrito</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-success">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- "FORMULARIO DE LOGIN" -->
+        <form class="form-login" id="login">
+            <h3>Inicio de sesion</h3>
+            <input class="form-login-controls" type="email" name="email" id="email" placeholder="email">
+            <input class="form-login-controls" type="password" name="contraseña" id="password" placeholder="contraseña">
+            <p><a href="#">¿No tienes cuenta? Registrate</a></p>
+            <input onclick="getdata()" class="form-login-btn" type="submit" value="iniciar sesion">
+        </form>
+        <!-- FORMULARIO DE REGISTRO -->
+        <form class="form-register" id="register">
+            <h3>Registrarse</h3>
+            <input class="form-register__controls" type="text" name="nombre" id="newname" placeholder="nombre">
+            <input class="form-register__controls" type="text" name="apellido" id="newlastname" placeholder="apellido">
+            <input class="form-register__controls" type="email" name="email" id="newemail" placeholder="email">
+            <input class="form-register__controls" type="password" name="contraseña" id="newpassword"
+                placeholder="contraseña">
+            <input class="form-register__controls" type="password" name="contraseña" id="newpasswordconf"
+                placeholder="contraseña">
+            <p>Acepto los <a href="#">terminos y condiciones</a></p>
+            <input onclick="btnCreate()" type="submit" value="registrar" class="form-register__btn">
+        </form>
+    </header>
+    <main >
+        <section class="seccion__uno container ">
+            <!-- comienzo de carrousel -->
+            <div class="row ">
+                <div class="carrousel__conteiner col-sm-12 col-md-6 p-2 " style="height:500px;">
+                    <h3 class="carrousel__title">Lo nuevo en beatCloud</h3>
+                    <div id="carouselExampleIndicators" class="carousel slide  " data-bs-ride="true">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner h-100">
+                            <div class="carousel-item active">
+                                <img src="/pagina principal/img/foto 1.webp" class="d-block w-100 ñ" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/pagina principal/img/foto 2.webp" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/pagina principal/img/foto3.jpeg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- fin de carrousel -->
+                <!-- inicio de seccion los mas vistos  -->
+                <div class="top-conteiner col-sm-12 mt-sm-3 col-md-6 ">
+                    <div class="body">
+                        <span class="top">Top 5</span>
+                        <div class="title"> </div>
+                        <ul class="top_ul">
+                            <li class="music">The Blind Navigator (Extended Mix)<br>Kasper Koman</br>
+                                <audio class="audio" controls>
+                                    <source src="" type="audio/mpeg">
+                                </audio>
+                            </li>
+                            <li class="music">Oranai (Nicholas Van Orton Summer Remix)<br>GMJ</br>
+                                <audio class="audio" controls>
+                                    <source src="" type="audio/mpeg">
+                                </audio>
+                            </li>
+                            <li class="music">Drifted Paths (Original Mix)<br>Kros</br>
+                                <audio class="audio" controls>
+                                    <source src="" type="audio/mpeg">
+                                </audio>
+                            </li>
+                            <li class="music">Shadows of the Soul (Original Mix)<br>Unusual Soul</br>
+                                <audio class="audio" controls>
+                                    <source src="" type="audio/mpeg">
+                                </audio>
+                            </li>
+                            <li class="music">Small Alarms (Original Mix)<br>Guy J</br>
+                                <audio class="audio" controls>
+                                    <source src="" type="audio/mpeg">
+                                </audio>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- fin de seccion los mas vistos -->
+        </section>
+        <!-- INICIO DEL CRUD -->
+        <!-- BOTON FLOTANTE DE SUBIDA DE ARCHIVOS -->
+        <div class="wrapper">
+            <button class="circle" id="btnsubir">
+                <img id="addSign"
+                    src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/2x/btw_ic_speeddial_white_24dp_2x.png"
+                    alt="" />
+            </button>
+        </div>
+        <!-- BOTON FLOTANTE DE SUBIDA DE ARCHIVOS -->
+        <h3 class="catalogo-title">catalogo</h3>
+
+        <!-- FORMULARIO DE SUBIDA DE ARCHIVOS -->
+        <form class="form-subir-body" id="form-subir" action="">
+            <h3>Sube tu cancion</h3>
+            <input class="form-subir-controls" type="text" name="cancionportada" id="cancionportada"
+                placeholder="ingresa url de portada">
+            <input class="form-subir-controls" type="text" name="cancionnombre" id="cancionnombre"
+                placeholder="ingresa el nombre">
+            <input class="form-subir-controls" type="text" name="cancionautor" id="cancionautor"
+                placeholder="ingresa el autor">
+                <input class="form-subir-controls" type="text" name="cancionprecio" id="cancionprecio"
+                placeholder="ingresa el precio">
+            <input class="form-subir-controls" type="text" name="canciongenero" id="canciongenero"
+                placeholder="ingresa el genero">
+            <input class="form-subir-btn" type="submit" onclick=" btnCreatec()" value="subir">
+            <input type="reset" class="form-reset-btn" onclick="clearForm()" value="resetear">
+
+        </form>
+        <!-- FORMULARIO DE SUBIDA DE ARCHIVOS -->
+        <div class="crud-body container-fluid" >
+
+            <!-- SECCION ROCK  -->
+
+            <section class="crud-section " >
+                <h2 class="crud-subtitle " >ROCK</h2>
+                <div class="row gap-4 gap-sm-0  gap-md-0   mx-auto  " id="rock">
+                    <div class="col-12 col-sm-6  col-md-4 ">
+                        <!-- card -->
+                        <div class="crud-card-body">
+
+                            <div class="crud-img-conteiner">
+    
+                                <img class="crud-card-img " id="card-portada-Enter"
+                                    src="https://images4.alphacoders.com/709/thumb-1920-709281.jpg" alt="portada">
+                            </div>
+                            <div class="crud-card-text">
+                                <h4 id='card-titulo-Enter'>Enter the dragon</h4>
+                                <p>The ShadowHunters</p>
+                                 <p class="bi bi-currency-dollar" id="precio-Enter"> 345</p>
+                                <button class="crud-card-btn"
+                                    onclick="CapturarDatos('card-titulo-Enter','card-portada-Enter','precio-Enter')">
+                                    <span class="add-to-cart">Agregar al carrito</span>
+                                    <span class="added">Agregado</span>
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <i class="fas fa-box"></i></button>
+                                    <!-- "eliminar modificar card" -->
+                                    <button class="btn btn-success mt-2">Editar</button>
+                                    <button class="btn btn-danger mt-2">Borrar</button>
+                                      <!-- "eliminar modificar card" -->
+                            </div>
+                        </div>
+                        <!-- card  -->
+
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 ">
+                        <!-- card -->
+                        <div class="crud-card-body">
+                            <div class="crud-img-conteiner">
+                                <img class="crud-card-img" id="card-portada-Helloween"
+                                    src="https://images.alphacoders.com/291/291711.jpg" alt="portada">
+                            </div>
+                            <div class="crud-card-text">
+                                <h4 id='card-titulo-Helloween'>Helloween</h4>
+                                <p>skulls</p>
+                                 <p class="bi bi-currency-dollar" id="precio-Helloween"> 950</p>
+                                <button class="crud-card-btn"
+                                    onclick="CapturarDatos('card-titulo-Helloween' , 'card-portada-Helloween', 'precio-Helloween')">
+                                    <span class="add-to-cart">Agregar al carrito</span>
+                                    <span class="added">Agregado</span>
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <i class="fas fa-box"></i></button>
+                                         <!-- "eliminar modificar card" -->
+                                         <button class="btn btn-success mt-2">Editar</button>
+                                         <button class="btn btn-danger mt-2">Borrar</button>
+                                           <!-- "eliminar modificar card" -->
+                            </div>
+                        </div>
+                        <!-- card  -->
+                    </div>
+                    <div class="col-12 col-sm-12  col-md-4">
+                        <!-- card  -->
+                        <div class="crud-card-body">
+                            <div class="crud-img-conteiner">
+                                <img class="crud-card-img " id="card-portada-Killwitch"
+                                    src="https://images4.alphacoders.com/292/thumb-1920-292226.jpg" alt="portada">
+                            </div>
+                            <div class="crud-card-text">
+                                <h4 id='card-titulo-Killwitch'>Killwitch Engage</h4>
+                                <p>The killers</p>
+                                 <p class="bi bi-currency-dollar" id="precio-Killwitch"> 275</p>
+                                <button class="crud-card-btn"
+                                    onclick="CapturarDatos('card-titulo-Killwitch', 'card-portada-Killwitch','precio-Killwitch')">
+                                    <span class="add-to-cart">Agregar al carrito</span>
+                                    <span class="added">Agregado</span>
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <i class="fas fa-box"></i></button>
+                                         <!-- "eliminar modificar card" -->
+                                         <button class="btn btn-success mt-2">Editar</button>
+                                         <button class="btn btn-danger mt-2">Borrar</button>
+                                           <!-- "eliminar modificar card" -->
+                            </div>
+                        </div>
+                        <!-- card  -->
+                    </div>
+                </div>
+                <!-- FIN SECCION ROCK -->
+                <!-- SECCION POP -->
+
+                <section class="crud-section  justify-content-center   ">
+                    <h2 class="crud-subtitle " >pop</h2>
+                    <div class="row gap-4 gap-sm-0  gap-md-0   mx-auto " id="pop">
+                        <div class="col-12 col-sm-6  col-md-4">
+                            <!-- card  -->
+                            <div class="crud-card-body">
+                                <div class="crud-img-conteiner">
+                                    <img class="crud-card-img" id="card-portada-Day"
+                                        src="https://images3.alphacoders.com/241/thumb-1920-241809.png" alt="portada">
+                                </div>
+                                <div class="crud-card-text">
+                                    <h4 id='card-titulo-Day'>Day of the beats</h4>
+                                    <p>Wham</p>
+                                     <p class="bi bi-currency-dollar" id="precio-Day"> 150</p>
+                                    <button class="crud-card-btn"
+                                        onclick="CapturarDatos('card-titulo-Day', 'card-portada-Day', 'precio-Day')">
+                                        <span class="add-to-cart">Agregar al carrito</span>
+                                        <span class="added">Agregado</span>
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <i class="fas fa-box"></i></button>
+                                             <!-- "eliminar modificar card" -->
+                                    <button class="btn btn-success mt-2">Editar</button>
+                                    <button class="btn btn-danger mt-2">Borrar</button>
+                                      <!-- "eliminar modificar card" -->
+                                </div>
+                            </div>
+                            <!-- card  -->
+
+                        </div>
+                        <div class="col-12 col-sm-6  col-md-4">
+
+                            <!-- card  -->
+                            <div class="crud-card-body">
+                                <div class="crud-img-conteiner">
+                                    <img class="crud-card-img " id="card-portada-Acoustic"
+                                        src="https://img.freepik.com/foto-gratis/chicos-mano-guitarra_1423-151.jpg?t=st=1654891288~exp=1654891888~hmac=5f1d4d687538fafa01b53d4b7b5b71701abc5099ec6bfe2cb0f3cd97c9580178&w=900"
+                                        alt="portada">
+                                </div>
+                                <div class="crud-card-text">
+                                    <h4 id='card-titulo-Acoustic'>Acoustic Compilation</h4>
+                                    <p>The neighbor</p>
+                                     <p class="bi bi-currency-dollar" id="precio-neighbor"> 566</p>
+                                    <button class="crud-card-btn"
+                                        onclick="CapturarDatos('card-titulo-Acoustic','card-portada-Acoustic', 'precio-neighbor')">
+                                        <span class="add-to-cart">Agregar al carrito</span>
+                                        <span class="added">Agregado</span>
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <i class="fas fa-box"></i></button>
+                                             <!-- "eliminar modificar card" -->
+                                    <button class="btn btn-success mt-2">Editar</button>
+                                    <button class="btn btn-danger mt-2">Borrar</button>
+                                      <!-- "eliminar modificar card" -->
+                                </div>
+                            </div>
+                            <!-- card  -->
+                        </div>
+                        <div class="col-12 col-sm-12  col-md-4">
+                            <!-- card  -->
+                            <div class="crud-card-body">
+                                <div class="crud-img-conteiner">
+                                    <img class="crud-card-img " id="card-portada-Try"
+                                        src="https://images2.alphacoders.com/772/thumb-1920-772804.jpg" alt="portada">
+                                </div>
+                                <div class="crud-card-text">
+                                    <h4 id='card-titulo-Try'>Try</h4>
+                                    <p>Pink</p>
+                                     <p class="bi bi-currency-dollar" id="precio-Try"> 700</p>
+                                    <button class="crud-card-btn"
+                                        onclick="CapturarDatos('card-titulo-Try', 'card-portada-Try', 'precio-Try')">
+                                        <span class="add-to-cart">Agregar al carrito</span>
+                                        <span class="added">Agregado</span>
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <i class="fas fa-box"></i></button>
+                                             <!-- "eliminar modificar card" -->
+                                    <button class="btn btn-success mt-2">Editar</button>
+                                    <button class="btn btn-danger mt-2">Borrar</button>
+                                      <!-- "eliminar modificar card" -->
+                                </div>
+                            </div>
+                            <!-- card  -->
+
+                        </div>
+                    </div>
+                    <!-- SECCION POP -->
+                    <!-- SECCION RAP  -->
+
+                    <section class="crud-section ">
+                        <h2 class="crud-subtitle ">RAP</h2>
+                        <div class="row gap-4 gap-sm-0  gap-md-0   mx-auto" id="rap">
+                            <div class="col-12 col-sm-6  col-md-4">
+                                <!-- card  -->
+                                <div class="crud-card-body">
+                                    <div class="crud-img-conteiner">
+                                        <img class="crud-card-img " id="card-portada-Undergroud "
+                                            src="https://images8.alphacoders.com/482/thumb-1920-482243.jpg"
+                                            alt="portada">
+                                    </div>
+                                    <div class="crud-card-text">
+                                        <h4 id='card-titulo-Undergroud'>Undergroud</h4>
+                                        <p>Russian Rap</p>
+                                         <p class="bi bi-currency-dollar" id="precio-Undergroud"> 950</p>
+                                        <button class="crud-card-btn"
+                                            onclick="CapturarDatos('card-titulo-Undergroud', 'card-portada-Undergroud ', 'precio-Undergroud')">
+                                            <span class="add-to-cart">Agregar al carrito</span>
+                                            <span class="added">Agregado</span>
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <i class="fas fa-box"></i></button>
+                                                 <!-- "eliminar modificar card" -->
+                                    <button class="btn btn-success mt-2">Editar</button>
+                                    <button class="btn btn-danger mt-2">Borrar</button>
+                                      <!-- "eliminar modificar card" -->
+                                    </div>
+                                </div>
+                                <!-- card  -->
+
+                            </div>
+
+                            <div class="col-12 col-sm-6  col-md-4">
+
+                                <!-- card  -->
+                                <div class="crud-card-body">
+                                    <div class="crud-img-conteiner">
+                                        <img class="crud-card-img " id="card-portada-Most"
+                                            src="https://images.alphacoders.com/650/650654.jpg" alt="portada">
+                                    </div>
+                                    <div class="crud-card-text">
+                                        <h4 id='card-titulo-Most'>Most Wanted</h4>
+                                        <p>Snoop Dog</p>
+                                         <p class="bi bi-currency-dollar" id="precio-Most"> 1500</p>
+                                        <button class="crud-card-btn"
+                                            onclick="CapturarDatos('card-titulo-Most' , 'card-portada-Most', 'precio-Most')">
+                                            <span class="add-to-cart">Agregar al carrito</span>
+                                            <span class="added">Agregado</span>
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <i class="fas fa-box"></i></button>
+                                                 <!-- "eliminar modificar card" -->
+                                    <button class="btn btn-success mt-2">Editar</button>
+                                    <button class="btn btn-danger mt-2">Borrar</button>
+                                      <!-- "eliminar modificar card" -->
+                                    </div>
+                                </div>
+                                <!-- card  -->
+                            </div>
+                            <div class="col-12 col-sm-12  col-md-4">
+                                <!-- card  -->
+                                <div class="crud-card-body">
+                                    <div class="crud-img-conteiner">
+                                        <img class="crud-card-img " id="card-portada-Epic"
+                                            src="https://images5.alphacoders.com/559/thumb-1920-559946.png"
+                                            alt="portada">
+                                    </div>
+                                    <div class="crud-card-text">
+                                        <h4 id='card-titulo-Epic'>Epic Rap Battles</h4>
+                                        <p>57</p>
+                                         <p class="bi bi-currency-dollar" id="precio-Epic"> 800</p>
+                                        <button class="crud-card-btn"
+                                            onclick="CapturarDatos('card-titulo-Epic', 'card-portada-Epic', 'precio-Epic')">
+                                            <span class="add-to-cart">Agregar al carrito</span>
+                                            <span class="added">Agregado</span>
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <i class="fas fa-box"></i></button>
+                                                 <!-- "eliminar modificar card" -->
+                                    <button class="btn btn-success mt-2">Editar</button>
+                                    <button class="btn btn-danger mt-2">Borrar</button>
+                                      <!-- "eliminar modificar card" -->
+                                    </div>
+                                </div>
+                                <!-- card  -->
+
+                            </div>
+                        </div>
+
+                        <!-- FIN SECCION RAP -->
+                        <!-- SECCION METAL  -->
+
+                        <section class="crud-section ">
+                            <h2 class="crud-subtitle " >METAL</h2>
+                            <div class="row gap-4 gap-sm-0  gap-md-0   mx-auto" id="metal">
+                                <div class="col-12 col-sm-6  col-md-4">
+                                    <!-- card  -->
+                                    <div class="crud-card-body">
+                                        <div class="crud-img-conteiner">
+                                            <img class="crud-card-img " id="card-portada-soul"
+                                                src="https://images3.alphacoders.com/278/thumb-1920-278185.jpg"
+                                                alt="portada">
+                                        </div>
+                                        <div class="crud-card-text">
+                                            <h4 id='card-titulo-soul'>this is my soul</h4>
+                                            <p>Megadeth</p>
+                                             <p class="bi bi-currency-dollar" id="precio-soul"> 750</p>
+                                            <button class="crud-card-btn"
+                                                onclick="CapturarDatos('card-titulo-soul', 'card-portada-soul', 'precio-soul')">
+                                                <span class="add-to-cart">Agregar al carrito</span>
+                                                <span class="added">Agregado</span>
+                                                <i class="fas fa-shopping-cart"></i>
+                                                <i class="fas fa-box"></i></button>
+                                                     <!-- "eliminar modificar card" -->
+                                    <button class="btn btn-success mt-2">Editar</button>
+                                    <button class="btn btn-danger mt-2">Borrar</button>
+                                      <!-- "eliminar modificar card" -->
+                                        </div>
+                                    </div>
+                                    <!-- card  -->
+                                    <!-- card -->
+
+                                </div>
+                                <div class="col-12 col-sm-6  col-md-4">
+                                    <!-- card  -->
+                                    <div class="crud-card-body">
+                                        <div class="crud-img-conteiner">
+                                            <img class="crud-card-img " id="card-portada-specter"
+                                                src="https://images.alphacoders.com/769/thumb-1920-769620.jpg"
+                                                alt="portada">
+                                        </div>
+                                        <div class="crud-card-text">
+                                            <h4 id='card-titulo-specter'>the specter</h4>
+                                            <p>Ghost</p>
+                                             <p class="bi bi-currency-dollar" id="precio-specter"> 1170</p>
+                                            <button class="crud-card-btn"
+                                                onclick="CapturarDatos('card-titulo-specter', 'card-portada-specter', 'precio-specter')">
+                                                <span class="add-to-cart">Agregar al carrito</span>
+                                                <span class="added">Agregado</span>
+                                                <i class="fas fa-shopping-cart"></i>
+                                                <i class="fas fa-box"></i></button>
+                                                     <!-- "eliminar modificar card" -->
+                                    <button class="btn btn-success mt-2">Editar</button>
+                                    <button class="btn btn-danger mt-2">Borrar</button>
+                                      <!-- "eliminar modificar card" -->
+                                        </div>
+                                    </div>
+                                    <!-- card  -->
+
+                                </div>
+                                <div class="col-12 col-sm-12  col-md-4">
+                                    <!-- card  -->
+                                    <div class="crud-card-body">
+                                        <div class="crud-img-conteiner">
+                                            <img class="crud-card-img " id="card-portada-single"
+                                                src="https://images2.alphacoders.com/179/thumb-1920-179510.jpg"
+                                                alt="portada">
+                                        </div>
+                                        <div class="crud-card-text">
+                                            <h4 id='card-titulo-single'>My single Rap</h4>
+                                            <p>Ozzy Osbourne</p>
+                                             <p class="bi bi-currency-dollar" id="precio-single"> 490</p>
+                                            <button class="crud-card-btn"
+                                                onclick="CapturarDatos('card-titulo-single', 'card-portada-single', 'precio-single')">
+                                                <span class="add-to-cart">Agregar al carrito</span>
+                                                <span class="added">Agregado</span>
+                                                <i class="fas fa-shopping-cart"></i>
+                                                <i class="fas fa-box"></i></button>
+                                                     <!-- "eliminar modificar card" -->
+                                    <button class="btn btn-success mt-2">Editar</button>
+                                    <button class="btn btn-danger mt-2">Borrar</button>
+                                      <!-- "eliminar modificar card" -->
+                                        </div>
+                                    </div>
+                                    <!-- card  -->
+                                </div>
+                            </div>
+                            <!-- FIN SECCION METAL -->
+                            <!-- SECCION ELECTRONICA  -->
+                            <section class="crud-section ">
+                                <h2 class="crud-subtitle ">ELECTRONICA</h2>
+                                <div class="row gap-4 gap-sm-0  gap-md-0   mx-auto" id="electronica">
+                                    <div class="col-12 col-sm-6  col-md-4">
+                                        <!-- card  -->
+                                        <div class="crud-card-body">
+                                            <div class="crud-img-conteiner">
+                                                <img class="crud-card-img " id="card-portada-Purified"
+                                                    src="https://besthqwallpapers.com/Uploads/6-3-2021/159427/thumb2-nora-en-pure-4k-white-neon-lights-music-stars-south-african-djs.jpg"
+                                                    alt="portada">
+                                            </div>
+                                            <div class="crud-card-text">
+                                                <h4 id='card-titulo-Purified'>Purified 300</h4>
+                                                <p>Nora En Pure</p>
+                                                 <p class="bi bi-currency-dollar" id="precio-Purified"> 76</p>
+                                                <button class="crud-card-btn"
+                                                    onclick="CapturarDatos('card-titulo-Purified', 'card-portada-Purified', 'precio-Purified')">
+                                                    <span class="add-to-cart">Agregar al carrito</span>
+                                                    <span class="added">Agregado</span>
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                    <i class="fas fa-box"></i></button>
+                                                         <!-- "eliminar modificar card" -->
+                                    <button class="btn btn-success mt-2">Editar</button>
+                                    <button class="btn btn-danger mt-2">Borrar</button>
+                                      <!-- "eliminar modificar card" -->
+                                            </div>
+                                        </div>
+                                        <!-- card  -->
+                                        <!-- card -->
+
+                                    </div>
+                                    <div class="col-12 col-sm-6  col-md-4">
+                                        <!-- card  -->
+                                        <div class="crud-card-body">
+                                            <div class="crud-img-conteiner">
+                                                <img class="crud-card-img" id="card-portada-alone"
+                                                    src="https://images5.alphacoders.com/313/313694.jpg" alt="portada">
+                                            </div>
+                                            <div class="crud-card-text">
+                                                <h4 id='card-titulo-alone'>World alone</h4>
+                                                <p>Zenit Music</p>
+                                                 <p class="bi bi-currency-dollar" id="precio-alone"> 350</p>
+                                                <button class="crud-card-btn"
+                                                    onclick="CapturarDatos('card-titulo-alone', 'card-portada-alone' , 'precio-alone')">
+                                                    <span class="add-to-cart">Agregar al carrito</span>
+                                                    <span class="added">Agregado</span>
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                    <i class="fas fa-box"></i></button>
+                                                         <!-- "eliminar modificar card" -->
+                                    <button class="btn btn-success mt-2">Editar</button>
+                                    <button class="btn btn-danger mt-2">Borrar</button>
+                                      <!-- "eliminar modificar card" -->
+                                            </div>
+                                        </div>
+                                        <!-- card  -->
+
+                                    </div>
+                                    <div class="col-12 col-sm-12  col-md-4">
+                                        <!-- card  -->
+                                        <div class="crud-card-body">
+                                            <div class="crud-img-conteiner">
+                                                <img class="crud-card-img" id="card-portada-step"
+                                                    src="https://images4.alphacoders.com/108/108566.jpg" alt="portada">
+                                            </div>
+                                            <div class="crud-card-text">
+                                                <h4 id='card-titulo-step'>step</h4>
+                                                <p>Minimal Techno</p>
+                                                 <p class="bi bi-currency-dollar" id="precio-step"> 1200</p>
+                                                <button class="crud-card-btn"
+                                                    onclick="CapturarDatos('card-titulo-step', 'card-portada-step','precio-step')">
+                                                    <span class="add-to-cart">Agregar al carrito</span>
+                                                    <span class="added">Agregado</span>
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                    <i class="fas fa-box"></i></button>
+                                                         <!-- "eliminar modificar card" -->
+                                    <button class="btn btn-success mt-2">Editar</button>
+                                    <button class="btn btn-danger mt-2">Borrar</button>
+                                      <!-- "eliminar modificar card" -->
+                                            </div>
+                                        </div>
+                                        <!-- card  -->
+                                    </div>
+                                </div>
+                                <!-- FIN SECCION ELECTRONICA -->
+                            </section>
+                            <div  id="contenedorcanciones" class="section-nuevo"></div>
+        </div>
+        <!-- FIN DEL CRUD -->
+    </main>
+    <!-- footer -->
+    <footer class="grid p-5 container-fluid text-center bg-black text-light">
+        <div class="row">
+            <div class=" col-sm-6 col-md-6">
+                <ol>
+                    <li id="contacto">Redes</li>
+                    <li><i class="bi bi-whatsapp"></i> Whatsapp</li>
+                    <li><i class="bi bi-envelope-check"></i> E-mail</li>
+                    <li><i class="bi bi-instagram"></i> Instagram</li>
+                    <li><i class="bi bi-facebook"></i> Facebook</li>
+                    <li><i class="bi bi-twitter"></i> Twitter</li>
+                </ol>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <ol>
+                    <li>Lo mas escuchado</li>
+                    <li><i class="bi bi-file-earmark-music-fill"></i> Helloween</li>
+                    <li><i class="bi bi-boombox"></i> Try</li>
+                    <li><i class="bi bi-music-player"></i> Most Wanted</li>
+                    <li><i class="bi bi-music-note-list"></i> Epic Rap Battles</li>
+                    <li><i class="bi bi-vinyl"></i> Purified 300</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row d-block pt-5">
+            <span id="footer-pie">© copyright Beat-Clound- 2022</span>
+        </div>
+    </footer>
+    <!-- boostrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+    <!-- iconos linkeo -->
+    <script src="uikit/dist/js/uikit-icons.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit-icons.min.js"></script>
+    <!-- boostrap script -->
+    <script src="admin.js"></script>
+    <script src="carrito.js"></script>
+</body>
+
+</html>
