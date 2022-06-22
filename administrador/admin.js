@@ -1,97 +1,3 @@
-const apiURL = "https:62a8f315ec36bf40bdb0cdde.mockapi.io/cancion";
-// CRUD
-
-// VARIABLES
-let newNombreCancion = document.getElementById("cancionnombre");
-let newCancionPrecio = document.getElementById("cancionprecio")
-let newAutor = document.getElementById("cancionautor");
-let newCancionURL = document.getElementById("cancionportada");
-let newFormSubir = document.getElementById("form-subir");
-let newSeccionGenero = document.getElementById("canciongenero")
-let contenedorCanciones = document.getElementById("contenedorcanciones");
-newFormSubir.addEventListener("click", (e) => {
-  e.preventDefault();
-});
-// // obtener cancion de la api
-// async function getCancion() {
-//   const response = await fetch(apiURL);
-//   let dato = await response.json();
-//   return dato;
-// }
-// RESETEO DE FORMULARIO
-function clearForm() {
-  newFormSubir.reset();
-}
-// CREAR OBJETO CANCION NUEVA
-function crearNuevaCancion() {
-  let newCancion = {
-    "nombre":newNombreCancion.value,
-    "autor":newAutor.value,
-    "url":newCancionURL.value,
-    "precio":newCancionPrecio.value,
-    "genero":newSeccionGenero.value,
-  };
-  return newCancion;
-  
-}
-async function posteoCancion(newCancion) {
-  const response = await fetch(apiURL, {
-    method: "POST",
-    body: JSON.stringify(newCancion),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  });
-  const data = await response.json();
-
-  console.log(data);
-  return data;
-}
-function btnCreatec() {
-  let cancion = crearNuevaCancion();
-
- 
-  posteoCancion(cancion).then((response) => {
-    console.log(response);
-  });
-  clearForm();
-}
-
-// CARGAR CANCIONES
-function cargarCanciones() {
-  let canciones = getcanciones();
-  canciones.then((response) => {
-   response.map((cancion) => {
-  
-    let dato = `
-    <!-- card -->
-    <div class="crud-card-body">
-        <div class="crud-img-conteiner">
-            <img class="crud-card-img" id="card-portada-Helloween"
-                src="${cancion.url}" alt="portada">
-        </div>
-        <div class="crud-card-text">
-            <h4 id='card-titulo-Helloween'>${cancion.nombre}</h4>
-            <p>${cancion.autor}</p>
-             <p class="bi bi-currency-dollar" id="precio-Helloween"> ${cancion.precio}</p>
-            <button class="crud-card-btn"
-                onclick="CapturarDatos('card-titulo-Helloween' , 'card-portada-Helloween', 'precio-Helloween')">
-                <span class="add-to-cart">Agregar al carrito</span>
-                <span class="added">Agregado</span>
-                <i class="fas fa-shopping-cart"></i>
-                <i class="fas fa-box"></i></button>
-        </div>
-    </div>
-    <!-- card  -->`
-    });
-  });
-}
-
-
-// TENGO QUE SEGUIR VIENDO ESTO HAY UN ERROR EN LOS NOMBRES O EN LA CARGA ALGO FALTA
-//carga inicial
-
-
 
 // ABRIR Y CERRAR NAV
 
@@ -266,5 +172,190 @@ const modalSubir = document.getElementById("form-subir");
 botonSubir.addEventListener("click",()=>{
   modalSubir.classList.toggle("form-subir-collapsed")
 })
+
+// CRUD
+const apiURL = "https:62a8f315ec36bf40bdb0cdde.mockapi.io/cancion";
+
+
+// VARIABLES
+let newNombreCancion = document.getElementById("cancionnombre");
+let newCancionPrecio = document.getElementById("cancionprecio")
+let newAutor = document.getElementById("cancionautor");
+let newCancionURL = document.getElementById("cancionportada");
+let newFormSubir = document.getElementById("form-subir");
+let newSeccionGenero = document.getElementById("canciongenero")
+newFormSubir.addEventListener("click", (e) => {
+  e.preventDefault();
+});
+async function getCancion() {
+  const response = await fetch(apiURL);
+  let data = await response.json();
+
+  return data;
+}
+
+// CREAR OBJETO CANCION NUEVA
+function crearNuevaCancion() {
+  let newCancion = {
+    "nombre":newNombreCancion.value,
+    "autor":newAutor.value,
+    "url":newCancionURL.value,
+    "precio":newCancionPrecio.value,
+    "genero":newSeccionGenero.value,
+  };
+  return newCancion;
+  
+}
+async function posteoCancion(newCancion) {
+  const response = await fetch(apiURL, {
+    method: "POST",
+    body: JSON.stringify(newCancion),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
+  const data = await response.json();
+
+  console.log(data);
+  return data;
+}
+
+
+function btnCreatec() {
+  let cancion = crearNuevaCancion();
+  posteoCancion(cancion).then((response) => {
+    console.log(response);
+    clearForm();
+    clearGrid();
+    loadSongs();
+  });
+}
+// RESETEO DE FORMULARIO
+function clearForm() {
+  newFormSubir.reset();
+}
+
+
+function clearGrid(){
+  contenedorcanciones.innerHTML = ' ';
+} 
+
 //carga inicial
+function loadSongs(){
+  let canciones = getCancion();
+
+  canciones.then((respuesta) => {
+  respuesta.forEach((cancio) => {
+    createCards(cancio.nombre, cancio.autor, cancio.url, cancio.precio, cancio.genero,cancio.id, );
+  });
+});
+}
+//ACTUALIZO CANCION
+
+async function updateCancion(cancion,id)
+{
+  const response = await fetch(apiURL + '/' + id,{
+    method : 'PUT',
+    body : JSON.stringify(cancion),
+    headers : {
+      'Content-type': 'application/json; charset=UTF-8' ,},
+    }) .then((response) => response.json())
+    .then((json) => console.log(json))
+}
+
+function editCancion(id){
+  let edicion = createCards();
+  updateCancion(edicion,id).then(() => {
+    clearForm();
+    clearGrid();
+    loadUsers();
+  })
+
+}
+// BORRO cancion
+
+async function deleteCancion(id)
+{
+  const response = await fetch(apiURL + '/' + id,{
+    method : 'DELETE',
+    });
+    return response;
+}
+
+function btnDelete(id){
+  deleteCancion(id).then(()=>{
+    clearForm();
+    clearGrid();
+    loadUsers();
+  });
+}
+///CREANDO CARDS
+
+
+  
+
+ 
+function createCards(nombre, autor, id, url, precio,genero,id) {
+  let newCard = document.createElement("div");
+  let imgConteiner = document.createElement("div");
+  let img = document.createElement("img");
+  let cardTextConteiner= document.createElement("div");
+  let cardNombre = document.createElement("h4");
+  let cardAutor =   document.createElement("p")
+  let cardPrecio = document.createElement('p');
+  let cardBtn = document.createElement("button");
+  let animAgregarCarrito = document.createElement("span");
+  let animAgregado = document.createElement("span");
+  let animIconoUno = document.createElement("i");
+  let animIconoDos = document.createElement("i");
+  let buttonEdit = document.createElement("button");
+  let buttonDelete = document.createElement("button");
+
+  newCard.className = 'crud-card-body'
+  imgConteiner.className = "crud-img-conteiner";
+  img.className = "crud-card-img";
+  cardTextConteiner.className = "crud-card-text";
+  cardPrecio.className = "bi bi-currency-dollar";
+  cardBtn.className = "crud-card-btn";
+  animAgregarCarrito.className = "add-to-cart";
+  animAgregado.className = "added";
+  animIconoUno.className = "fas fa-shopping-cart";
+  animIconoDos.className = "fas fa-box";
+  buttonEdit.className = "btn btn-success mt-2";
+
+  buttonDelete.className = "btn btn-danger mt-2";
+  buttonEdit.textContent = "Editar";
+  buttonDelete.textContent = "Borrar"; 
+  cardNombre.textContent = nombre;
+  cardAutor.textContent = autor;
+  cardPrecio.textContent = precio;
+  animAgregarCarrito.textContent = "Agregar al carrito";
+  animAgregado.textContent = "Agregado";
+
+  buttonEdit.addEventListener("click", () => {
+    editCancion(id);
+  });
+
+  buttonDelete.addEventListener("click", () => {
+    btnDelete(id);
+  });
+
+  newCard.append(imgConteiner);
+  imgConteiner.append(img);
+  img.setAttribute("src", `${url}`);
+  newCard.append(cardTextConteiner);
+  cardTextConteiner.append(cardNombre);
+  cardTextConteiner.append(cardAutor);
+  cardTextConteiner.append(cardPrecio);
+  cardTextConteiner.append(cardBtn);
+  cardBtn.append(animAgregarCarrito);
+  cardBtn.append(animAgregado);
+  cardBtn.append(animIconoUno);
+  cardBtn.append(animIconoDos);
+  cardTextConteiner.append(buttonEdit);
+  cardTextConteiner.append(buttonDelete);
+  document.getElementById("contenedorcanciones").append(newCard);
+  return newCard;
+}
+// carga inicial
 loadUsers();
